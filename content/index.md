@@ -31,7 +31,7 @@ _Gatekeeper is a fast-paced rogue-lite. Go on a quest to find the stolen Heart o
 <div class="description">A database of all the items in the game and how to unlock them.</div>
 </a>
 
-<a href="[[Achievements]]" class="grid-item type-4">
+<a href="Achievements" class="grid-item type-4">
 <div class="icon">👑</div>
 <div class="title">Achievements</div>
 <div class="description">Achievements, what they unlock and tips on how to accomplish them.</div>
