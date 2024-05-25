@@ -1,5 +1,5 @@
 ---
-title: Cinder Flame
+title: Cinder Flare
 enableToc: false
 ---
 > [!artifactsc] Structure Change
