@@ -62,5 +62,7 @@ Thanks to his origin, he became accustomed to the mystical atmosphere of the Now
 - **Upgrade 2**: Each crow, when hitting an enemy, restores 3% of Nidum's maximum health.
 - **Upgrade 3**: Number of crows +3.
 
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
 **Edit on GitHub:**
 [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Gatekeepers/Nidum.md)
