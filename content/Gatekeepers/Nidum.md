@@ -24,7 +24,7 @@ enableToc: false
 
 Nidum was a self-aware raven dwelling in the Nowhere - a space beyond the Universe. The Creators occasionally visited the Nowhere. 
 
-Being an unusual raven, Nidum possessed numerous abilities that were not typical for his kind, and these abilities caught the attention of the Creators. They saw in him the potential and strength that could be used to protect one of the Hearts of the Universe. By the end of his relatively --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Gatekeepers/Hybrid.md)short life, the Creators offered Nidum the opportunity to become a Gatekeeper, and the raven agreed.
+Being an unusual raven, Nidum possessed numerous abilities that were not typical for his kind, and these abilities caught the attention of the Creators. They saw in him the potential and strength that could be used to protect one of the Hearts of the Universe. By the end of his relatively short life, the Creators offered Nidum the opportunity to become a Gatekeeper, and the raven agreed.
 
 Thanks to his origin, he became accustomed to the mystical atmosphere of the Nowhere and became a strong and fearless guardian of the Heart of Time.
 
