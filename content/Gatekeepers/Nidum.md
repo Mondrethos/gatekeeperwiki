@@ -28,7 +28,7 @@ Being an unusual raven, Nidum possessed numerous abilities that were not typical
 
 Thanks to his origin, he became accustomed to the mystical atmosphere of the Nowhere and became a strong and fearless guardian of the Heart of Time.
 
-**Skills:**
+# Skills
 
 #### Empty Hands
 ![EmptyHands|wtiny](EmptyHands_Skill_Icon.png)
