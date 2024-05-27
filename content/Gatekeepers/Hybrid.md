@@ -61,5 +61,4 @@ In his previous life, Hybrid was a young scientist. His thirst for knowledge led
 
 <!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
 
-**Edit on GitHub:**
-[Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Gatekeepers/Hybrid.md)
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Gatekeepers/Hybrid.md)
