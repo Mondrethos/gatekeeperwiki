@@ -16,7 +16,7 @@
     font-size: 14px;
     color: var(--color);
     float: right;
-    margin: -10px 10px;
+    margin: -10px 10px 10px 10px;
   }
 
   &[data-callout="gatekeeper"] .callout-icon {
@@ -56,6 +56,20 @@
     height: auto;
     border: 1px solid var(--border);
   }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    &[data-callout="gatekeeper"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0; /* Adjust margins for mobile */
+    }
+
+    /* Ensure the callout title and content are full width */
+    &[data-callout="gatekeeper"] .callout-title {
+      margin: 0;
+    }
+  }
 }
 
 .callout {
@@ -72,7 +86,7 @@
     font-size: 14px;
     color: var(--color);
     float: right;
-    margin: -10px 10px;
+    margin: -10px 10px 10px 10px;
   }
 
   &[data-callout="artifactmod"] .callout-icon {
@@ -112,6 +126,20 @@
     height: auto;
     border: 1px solid var(--border);
   }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    &[data-callout="artifactmod"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0; /* Adjust margins for mobile */
+    }
+
+    /* Ensure the callout title and content are full width */
+    &[data-callout="artifactmod"] .callout-title {
+      margin: 0;
+    }
+  }
 }
 
 .callout {
@@ -128,7 +156,7 @@
     font-size: 14px;
     color: var(--color);
     float: right;
-    margin: -10px 10px;
+    margin: -10px 10px 10px 10px;
   }
 
   &[data-callout="artifactcursed"] .callout-icon {
@@ -168,6 +196,20 @@
     height: auto;
     border: 1px solid var(--border);
   }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    &[data-callout="artifactcursed"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0; /* Adjust margins for mobile */
+    }
+
+    /* Ensure the callout title and content are full width */
+    &[data-callout="artifactcursed"] .callout-title {
+      margin: 0;
+    }
+  }
 }
 
 .callout {
@@ -184,7 +226,7 @@
     font-size: 14px;
     color: var(--color);
     float: right;
-    margin: -10px 10px;
+    margin: -10px 10px 10px 10px;
   }
 
   &[data-callout="artifactamulet"] .callout-icon {
@@ -224,6 +266,20 @@
     height: auto;
     border: 1px solid var(--border);
   }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    &[data-callout="artifactamulet"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0; /* Adjust margins for mobile */
+    }
+
+    /* Ensure the callout title and content are full width */
+    &[data-callout="artifactamulet"] .callout-title {
+      margin: 0;
+    }
+  }
 }
 
 .callout {
@@ -240,7 +296,7 @@
     font-size: 14px;
     color: var(--color);
     float: right;
-    margin: -10px 10px;
+    margin: -10px 10px 10px 10px;
   }
 
   &[data-callout="artifactroc"] .callout-icon {
@@ -280,6 +336,20 @@
     height: auto;
     border: 1px solid var(--border);
   }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    &[data-callout="artifactroc"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0; /* Adjust margins for mobile */
+    }
+
+    /* Ensure the callout title and content are full width */
+    &[data-callout="artifactroc"] .callout-title {
+      margin: 0;
+    }
+  }
 }
 
 .callout {
@@ -296,7 +366,7 @@
     font-size: 14px;
     color: var(--color);
     float: right;
-    margin: -10px 10px;
+    margin: -10px 10px 10px 10px;
   }
 
   &[data-callout="artifactsc"] .callout-icon {
@@ -335,6 +405,20 @@
     max-width: 100%;
     height: auto;
     border: 1px solid var(--border);
+  }
+
+  /* Media query for mobile devices */
+  @media (max-width: 600px) {
+    &[data-callout="artifactsc"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0; /* Adjust margins for mobile */
+    }
+
+    /* Ensure the callout title and content are full width */
+    &[data-callout="artifactsc"] .callout-title {
+      margin: 0;
+    }
   }
 }
 
