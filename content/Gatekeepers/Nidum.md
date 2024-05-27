@@ -11,7 +11,7 @@ enableToc: false
 > 
 > ## Stats
 >
-> **Unlock: Starts unlocked by default.**
+> **Unlock: To be determined.**
 >
 > | Type | Stat |
 > | ---- | ---- |
@@ -30,8 +30,13 @@ Thanks to his origin, he became accustomed to the mystical atmosphere of the Now
 
 # Skills
 
+#### Passive: Bloodlust
+![[Bloodlust_Skill_Icon.png|wtiny]]
+
+- **Effect**: Any skill damage, with a 10% chance, increases base damage by 10% for 5 seconds. Stacks up to 5 times.
+
 #### Empty Hands
-![EmptyHands|wtiny](EmptyHands_Skill_Icon.png)
+![[EmptyHands_Skill_Icon.png|wtiny]]
 
 - **Base**: Nidum's Faithful Claws.
 - **Upgrade 1**: Every third strike deals 150% damage.
@@ -39,7 +44,7 @@ Thanks to his origin, he became accustomed to the mystical atmosphere of the Now
 - **Upgrade 3**: 50% chance to trigger Bloodlust.
 
 #### Circular
-![Circular|wtiny](Circular_Skill_Icon.png)
+![[Circular_Skill_Icon.png|wtiny]]
 
 - **Base**: Nidum clasps his claws together and hurls them, creating a fiery vortex. Damage: 200%.
 - **Upgrade 1**: Increase the radius by 30%.
@@ -47,7 +52,7 @@ Thanks to his origin, he became accustomed to the mystical atmosphere of the Now
 - **Upgrade 3**: Guaranteed to ignite targets.
 
 #### Cleaver
-![Cleaver|wtiny](Cleaver_Skill_Icon.png)
+![[Cleaver_Skill_Icon.png|wtiny]]
 
 - **Base**: A dash to the selected point, ending with a fiery burst. Damage: 150%.
 - **Upgrade 1**: Restores 5% of maximum HP for each affected enemy.
@@ -55,7 +60,7 @@ Thanks to his origin, he became accustomed to the mystical atmosphere of the Now
 - **Upgrade 3**: The radius of the fiery burst is increased by 30%.
 
 #### Ritual
-![Ritual|wtiny](Ritual_Skill_Icon.png)
+![[Ritual_Skill_Icon.png|wtiny]]
 
 - **Base**: Summons 12 crows that randomly select a target within a radius of 40 units and attack it. Damage: 200%.
 - **Upgrade 1**: Crow damage +100%.
@@ -64,4 +69,5 @@ Thanks to his origin, he became accustomed to the mystical atmosphere of the Now
 
 <!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
 
---- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Gatekeepers/Nidum.md)
+**Edit on GitHub:**
+[Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Gatekeepers/Nidum.md)

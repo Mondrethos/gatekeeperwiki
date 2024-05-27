@@ -67,5 +67,7 @@ With her powerful abilities, she stands guard over the Heart of Time, ready to b
 - **Upgrade 2**: Receives elemental damage bonuses. Additionally, +15% to elemental damage bonuses.
 - **Upgrade 3**: Duration of the effect +2 seconds.
 
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
 **Edit on GitHub:**
 [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Gatekeepers/Pandora.md)
