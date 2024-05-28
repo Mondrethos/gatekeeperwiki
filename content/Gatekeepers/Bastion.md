@@ -22,7 +22,11 @@ enableToc: false
 
 **Description:**
 
-Bastion is a skilled warrior, renowned for his prowess in close combat and extraordinary resilience. This is what caught the attention of the Creators. The decision to draft Bastion into the ranks of the Gatekeepers was made while he was still alive. The Creators saw in him qualities ideally suited to protect the Hearts of the Universe. Upon crossing the threshold of the Nowhere, Bastion agreed to accept the fate of the Gatekeeper without hesitation. The Creators had given him a power beyond all human comprehension. Now the responsibility of protecting the Heart of Time rests on his shoulders.
+Bastion is a skilled warrior, renowned for his prowess in close combat and extraordinary resilience. This is what caught the attention of the Creators. 
+
+The decision to draft Bastion into the ranks of the Gatekeepers was made while he was still alive. The Creators saw in him qualities ideally suited to protect the Hearts of the Universe. 
+
+Upon crossing the threshold of the Nowhere, Bastion agreed to accept the fate of the Gatekeeper without hesitation. The Creators had given him a power beyond all human comprehension. Now the responsibility of protecting the Heart of Time rests on his shoulders.
 
 # Skills
 
