@@ -22,7 +22,13 @@ enableToc: false
 
 **Description:**
 
-In his previous life, Hybrid was a young scientist. His thirst for knowledge led him to create a new form of energy that combined the power of magic and the precision of technology. During one of his experiments on himself, the energy went out of control and essentially shattered his unprepared body. Arcanum, having observed his research and impressed by his determination, offered him the role of a Gatekeeper. Hybrid agreed, and the Creators endowed him with a shell of sufficient strength and endurance. Hybrid combines the power of magic and technology, and his unique abilities allow him to deliver devastating long-range blows. Thanks to his knowledge, he became a versatile warrior, capable of facing any opponent and protecting the Hearts from any threats.
+In his previous life, Hybrid was a young scientist. His thirst for knowledge led him to create a new form of energy that combined the power of magic and the precision of technology. 
+
+During one of his experiments on himself, the energy went out of control and essentially shattered his unprepared body. 
+
+Arcanum, having observed his research and impressed by his determination, offered him the role of a Gatekeeper. Hybrid agreed, and the Creators endowed him with a shell of sufficient strength and endurance. 
+
+Hybrid combines the power of magic and technology, and his unique abilities allow him to deliver devastating long-range blows. Thanks to his knowledge, he became a versatile warrior, capable of facing any opponent and protecting the Hearts from any threats.
 
 # Skills
 
