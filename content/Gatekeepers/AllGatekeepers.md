@@ -3,7 +3,7 @@ title: All Gatekeepers
 enableToc: false
 ---
 > [!Gatekeepers]+
-> | [[Hybrid]] | [[Nidum]]| [[Pandora]]| Bastion | Tech Hunter | Mediator | Echo |
+> | [[Hybrid]] | [[Nidum]]| [[Pandora]]| [[Bastion]] | Tech Hunter | Mediator | Echo |
 > | ------------------------------------------------------------ | ----------------------------------------------------------- | ---------------------------------------------------- | ------- | ----------- | -------- | ---- |
 > | ![Hybrid Gatekeeper](Hybrid_Portrait.png)| ![Nidum Gatekeeper](Nidum_Portrait.png) | ![Pandora Gatekeeper](Pandora_Portrait.png) |![Bastion Gatekeeper](Bastion_Portrait.png)|![Tech Hunter Gatekeeper](TechHunter_Portrait.png)|![Mediator Gatekeeper](Mediator_Portrait.png)|![Echo Gatekeeper](Echo_Portrait.png)|
 
