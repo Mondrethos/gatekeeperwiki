@@ -11,7 +11,7 @@ enableToc: false
 > 
 > ## Stats
 >
-> **Unlock: Activate Apothesis on either the 12th Location on normal or round 10 on Arena..**
+> **Unlock: Activate Apothesis on either the 12th Location on normal or round 10 in Arena.**
 >
 > | Type | Stat |
 > | ---- | ---- |

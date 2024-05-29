@@ -11,7 +11,7 @@ enableToc: false
 >
 > ## Stats
 >
-> **Unlock**: To be determined.
+> **Unlock: Find Dawnbreaker. It can be found at the northmost part of Runewood, on planet Aurora. It is the first planet you visit, and while every location is randomized, you can restart your run until you get it. Then, spend 10 Omni Stones to activate Dawnbreaker and unlock Bastion.**
 >
 > | Type | Stat |
 > | ---- | ---- |
