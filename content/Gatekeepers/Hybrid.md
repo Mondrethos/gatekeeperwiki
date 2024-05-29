@@ -11,7 +11,7 @@ enableToc: false
 >
 > ## Stats
 >
-> Unlock: Starts unlocked by default.
+> **Unlock: Starts unlocked by default.**
 >
 > | Type | Stat |
 > | ---- | ---- |
