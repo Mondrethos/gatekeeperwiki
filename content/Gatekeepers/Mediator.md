@@ -49,7 +49,7 @@ The Mediator, against his will, was given the opportunity to atone for his past.
 
 #### Ghostwalk
 ![[Ghostwalk.png|wtiny]]
-- **Base**: Enters an immaterial state for 6 seconds. Any action other than moving takes you out of the immaterial state.
+- **Base**: Enters an immaterial state for 3 seconds. Any action other than moving takes you out of the immaterial state.
 - **Upgrade 1**: Exiting the immaterial state pushes enemies within a radius of 10 units.
 - **Upgrade 2**: Passing through an enemy deals 150% damage.
 - **Upgrade 3**: Killing in the immaterial state restores 10% HP.

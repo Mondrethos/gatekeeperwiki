@@ -3,10 +3,11 @@ title: Essence
 enableToc: false
 ---
 > [!artifactroc] Rune of Creation
+>
 > # Essence
 >
 > ![[Essence_Icon.png]]
-> **Unlock: Basic Achievement Item Set 4** 
+> **Unlock: Basic Set - 4** 
 
 Oh yes, Essence, the rune of the Creators. This rune is charged with energy of such strength that it is even difficult to comprehend it. Use wisely.
 

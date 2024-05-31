@@ -52,7 +52,7 @@ Vita offered him the position of gatekeeper in the Temple of Time, in exchange f
 - **Base**: Leaves a trail to which returns when reused. Pushes enemies at the point of return.
 - **Upgrade 1**: After activating the Trace, attack speed is +100% for 5 seconds.
 - **Upgrade 2**: Creates a bomb when Return is activated. 150% damage within a radius of 6 units.
-- **Upgrade 3**: An impenetrable shield for 5 seconds after activating the Trace.
+- **Upgrade 3**: A shield that protects from one hit for 10 seconds after activating Trace.
 
 #### Onslaught
 ![[Onslaught.png|wtiny]]
