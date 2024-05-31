@@ -8,7 +8,7 @@ enableToc: false
 > # Blue Pill
 >
 > ![[Blue_pill_icon.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Basic Set - 1** 
 
 Endurance booster from the Second Universe War.
 

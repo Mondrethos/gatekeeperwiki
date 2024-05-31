@@ -8,7 +8,7 @@ enableToc: false
 > # Bayonet
 >
 > ![[Bayonet.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Titan-200 Achievement** 
 
 The bayonet is a weapon of last resort when the enemy gets too close. After the war, it became a common attribute of freelance fighters and mercenaries.
 

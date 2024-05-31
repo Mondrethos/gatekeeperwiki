@@ -8,7 +8,7 @@ enableToc: false
 > # Cannonade
 >
 > ![[Cannonade.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Pyromancer Achievement.** 
 
 A unique cosmic phenomenon. These fiery fireflies, wandering in groups across the vastness of the Universe, can bring serious problems to the planets they decide to visit. However, in skillful hands, they can become a powerful weapon.
 

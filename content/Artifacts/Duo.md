@@ -2,14 +2,12 @@
 title: Duo
 enableToc: false
 ---
----
-
 > [!artifactamulet] Amulet
 >
 > # Duo
 >
 > ![[Duo.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Siren Hunter Achievement** 
 
 Synths consist of millions of microscopic bots that are linked to the carrier's "brain". Can be configured to perform a wide range of simple actions, such as light cargo transportation or carrier defense.
 

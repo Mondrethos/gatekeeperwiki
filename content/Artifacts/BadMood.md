@@ -8,7 +8,7 @@ enableToc: false
 > # Bad Mood
 >
 > ![[Bad_Mood.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Basic Set - 1 ** 
 
 "They say that when Tarra is displeased with something, a hail of such projectiles begins on Palium. No one dares to verify it, but we have no other theory yet..."
 

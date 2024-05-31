@@ -8,7 +8,7 @@ enableToc: false
 > # First Impression
 >
 > ![[First_Impression.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Gladiator Achievement** 
 
 One of the relics left behind after the Second Universal War. The hammer was crafted by unknown blacksmiths from the Dead Worlds. The first blow of this hammer was always the most devastating.
 

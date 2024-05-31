@@ -2,13 +2,12 @@
 title: Adrenaline Pill
 enableToc: false
 ---
-
 > [!artifactmod] Modifier
 >
 > # Adrenaline Pill
 >
 > ![[Adrenaline pill_icon.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Basic Set - 1** 
 
 This capsule gave the warriors strength and increased their pain threshold. It was actively used in the Second Universe War.
 

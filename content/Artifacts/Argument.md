@@ -8,7 +8,7 @@ enableToc: false
 > # Argument
 >
 > ![[Argument.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Titan-200 Achievement** 
 
 Origin unknown. Researchers believe this device was created to operate in dangerous and hostile conditions, possibly for protection against viruses and other microorganisms within a small radius around the bearer.
 

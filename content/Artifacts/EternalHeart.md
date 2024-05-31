@@ -8,7 +8,7 @@ enableToc: false
 > # Eternal Heart
 >
 > ![[EternalHeart_Icon.png]]
-> **Unlock: Starts unlocked by default.** 
+> **Unlock: Strike Achievement** 
 
 An artifact forged by the craftsmen of Delta that allows you to indefinitely prolong the lives of initiative warriors.
 

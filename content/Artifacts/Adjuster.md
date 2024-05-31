@@ -7,7 +7,7 @@ enableToc: false
 > # Adjuster
 >
 > ![[Adjuster.png]]
-> **Unlock: Sirenade of a Single String Achievement Item Set** 
+> **Unlock: Sirenade of a Single String Achievement**
 
 A modification of the muscular system that allows for more effective strikes.
 
