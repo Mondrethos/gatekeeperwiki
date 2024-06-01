@@ -1036,3 +1036,8 @@ img[alt~="border"],
   width: 100%;
   object-fit: contain;
 }
+
+/* All Artifacts IMG Size in Table */
+body[data-slug="Artifacts/AllArtifacts"] td img {
+  max-width: 65% !important;
+}
