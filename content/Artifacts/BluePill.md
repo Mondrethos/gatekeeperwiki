@@ -1,6 +1,8 @@
 ---
 title: Blue Pill
 enableToc: false
+aliases:
+  - Blue Pill
 ---
 
 > [!artifactmod] Modifier

@@ -28,7 +28,7 @@ enableToc: false
 > | [[Adjuster]] | [[AdrenalinePill]] | [[Argument]] | [[BadMood]] |
 > |:---:|:---:|:---:|:---:|
 > | ![Adjuster](Adjuster.png) | ![Adrenaline Pill](Adrenaline%20pill_icon.png) | ![Argument](Argument.png) | ![Bad Mood](Bad_Mood.png) |
-> | [[BaneSeal]] | [[Bayonet]] | [[BluePill]] | [[Cannonade]] |
+> | [[BaneSeal]] | [[Bayonet]] | [[BluePill|Blue Pill]] | [[Cannonade]] |
 > | ![BaneSeal](BaneSeal.png) | ![Bayonet](Bayonet.png) | ![Blue Pill](Blue_pill_icon.png) | ![Cannonade](Cannonade.png) |
 > | [[ControlModule]] | [[Detonator]] | [[Elix]] | [[EternalHeart]] |
 > | ![Control Module](Control_Module.png) | ![Detonator](Detonator.png) | ![Elix](Elix.png) | ![Eternal Heart](EternalHeart_Icon.png) |
