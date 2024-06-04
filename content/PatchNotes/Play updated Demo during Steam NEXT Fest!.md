@@ -4,7 +4,6 @@ author:
 date: 2024-02-01T10:57:00
 tags: []
 ---
-
 Guten tag, Gatekeepers!  
   
 Today, we're excited to announce that Gatekeeper will participate in the upcoming Steam Next Fest (from Feb. 5 till Feb. 11)! Also, we'd like to introduce to you a completely new game mechanic - **in-game events**.
@@ -72,4 +71,8 @@ Useful links:
 👾 [Discord](https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FHkrp6AUa5S)  
 👽 [Twitter](https://twitter.com/gatekeeper_game)
 
-https://store.steampowered.com/news/app/2106670/view/4058374601080348605
+Check it [out here on steam](https://store.steampowered.com/news/app/2106670/view/4058374601080348605)
+
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Play updated Demo during Steam NEXT Fest!)

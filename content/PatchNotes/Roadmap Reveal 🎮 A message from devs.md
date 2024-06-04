@@ -4,7 +4,6 @@ author:
 date: 2024-05-08T09:06:00
 tags: []
 ---
-
 Greetings, Gatekeepers!  
   
 
@@ -34,4 +33,8 @@ Useful links:
 👾 [Discord](https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FHkrp6AUa5S)  
 👽 [Twitter](https://twitter.com/gatekeeper_game)
 
-https://store.steampowered.com/news/app/2106670/view/4188987871060399454
+Check it [out here on steam](https://store.steampowered.com/news/app/2106670/view/4188987871060399454)
+
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Roadmap Reveal 🎮 A message from devs)

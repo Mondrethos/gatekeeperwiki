@@ -4,7 +4,6 @@ author:
 date: 2024-02-05T04:12:00
 tags: []
 ---
-
 Greetings, Gatekeepers!  
   
 
@@ -35,4 +34,8 @@ Useful links:
 👾 [Discord](https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FHkrp6AUa5S)  
 👽 [Twitter](https://twitter.com/gatekeeper_game)
 
-https://store.steampowered.com/news/app/2106670/view/4058374765037517486
+Check it [out here on steam](https://store.steampowered.com/news/app/2106670/view/4058374765037517486)
+
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/THE NEW DEMO IS OUT! PLAY NOW!)

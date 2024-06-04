@@ -4,7 +4,6 @@ author:
 date: 2024-03-19T07:55:00
 tags: []
 ---
-
 Hello, Gatekeepers!  
   
 As we approach the release (stay tuned for more news), we're excited to introduce our new upcoming character - Tech Hunter.  
@@ -53,4 +52,8 @@ Useful links:
 👾 [Discord](https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2FHkrp6AUa5S)  
 👽 [Twitter](https://twitter.com/gatekeeper_game)
 
-https://store.steampowered.com/news/app/2106670/view/5922868739503805981
+Check it [out here on steam](https://store.steampowered.com/news/app/2106670/view/5922868739503805981)
+
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Dev Blog #3 - Meet New Hero!)
