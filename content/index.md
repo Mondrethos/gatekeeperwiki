@@ -43,7 +43,7 @@ _Gatekeeper is a fast-paced rogue-lite. Go on a quest to find the stolen Heart o
 <div class="description">Careful where you step.</div>
 </a>
 
-<a href="[[Patch Notes]]" class="grid-item type-6">
+<a href="PatchNotes" class="grid-item type-6">
 <div class="icon">📋</div>
 <div class="title">Patch Notes</div>
 <div class="description">All patchnotes since the game became purchasable.</div>
