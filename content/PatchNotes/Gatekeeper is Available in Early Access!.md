@@ -4,7 +4,6 @@ author:
 date: 2024-05-13T09:08:00
 tags: []
 ---
-
 Greetings, Gatekeepers!
 
   
@@ -62,4 +61,8 @@ The Deluxe Edition includes a game copy, exclusive Golden skin for the Gatekeepe
 Thank you,  
 Gravity Lagoon
 
-https://store.steampowered.com/news/app/2106670/view/4188987871078883151
+Check it [out here on steam](https://store.steampowered.com/news/app/2106670/view/4188987871078883151)
+
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Gatekeeper is Available in Early Access!)

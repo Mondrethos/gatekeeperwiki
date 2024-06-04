@@ -4,7 +4,6 @@ author:
 date: 2024-05-14T15:09:00
 tags: []
 ---
-
 Greetings Gatekeepers!  
   
 Version **0.8.0.37** is now available for download.  
@@ -26,4 +25,8 @@ We are very grateful for your feedback.
   
 _Gravity Lagoon_
 
-https://store.steampowered.com/news/app/2106670/view/4188987871083469235
+Check it [out here on steam](https://store.steampowered.com/news/app/2106670/view/4188987871083469235)
+
+<!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
+
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Update 0.8.0.37)
