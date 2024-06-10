@@ -38,11 +38,11 @@ enableToc: false
 > | ![HVC](HVC.png) | ![Indicator](Indicator_icon.png) | ![Injection](Injection.png) | ![Jade](Jade.png) |
 > | [[Karma]] | [[Kettlebell]] | [[NomadStick]] | [[OpalEye]] |
 > | ![Karma](Karma.png) | ![Kettlebell](Kettlebell.png) | ![Nomad Stick](NomadStick_Icon.png) | ![Opal Eye](Opal%20eye_icon.png) |
-> | [[Overlap]] | [[ProtectiveSign]] | [[Protocol1.0]] | [[Protocol2.0]] |
+> | [[Overlap]] | [[ProtectiveMark]] | [[Protocol1.0]] | [[Protocol2.0]] |
 > | ![Overlap](Overlap.png) | ![Protective Sign](Protective_Sign.png) | ![Protocol 1.0](Protocol%201.0_icon.png) | ![Protocol 2.0](Protocol_2.0.png) |
 > | [[Reflex]] | [[Riposte]] | [[RuneOfRebound]] | [[SecondWind]] |
 > | ![Reflex](Reflex.png) | ![Riposte](Riposte.png) | ![Rune of Rebound](RuneOfRebound_Icon.png) | ![Second Wind](Second_Wind.png) |
-> | [[ShieldModule]] | [[Skirmish]] | [[Spark]] | [[StringOfEli]] |
+> | [[ShieldModule]] | [[Skirmish]] | [[Spark]] | [[ElisString]] |
 > | ![Shield Module](Shield_Module.png) | ![Skirmish](Skirmish.png) | ![Spark](Spark.png) | ![String of Eli](String_Of_Eli.png) |
 > | [[TarrasClaw]] | [[ThunderRing]] | [[Triumph]] | [[VertebralImplant]] |
 > | ![Tarras Claw](TarrasClaw.png) | ![Thunder Ring](Thunder_Ring.png) | ![Triumph](Triumph.png) | ![Vertebral Implant](Vertebral%20Implant_icon.png) |
