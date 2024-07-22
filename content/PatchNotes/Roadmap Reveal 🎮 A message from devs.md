@@ -37,4 +37,4 @@ Check it [out here on steam](https://store.steampowered.com/news/app/2106670/vie
 
 <!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
 
---- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Roadmap Reveal 🎮 A message from devs.md)
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Roadmap Reveal%20🎮%20A%20message%20from%20devs.md)

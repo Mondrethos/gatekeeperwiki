@@ -65,4 +65,4 @@ Check it [out here on steam](https://store.steampowered.com/news/app/2106670/vie
 
 <!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
 
---- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Gatekeeper is Available in Early Access!.md)
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Gatekeeper%20is%20Available%20in%20Early%20Access!.md)

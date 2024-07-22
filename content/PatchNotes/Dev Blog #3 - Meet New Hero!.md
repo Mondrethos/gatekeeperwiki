@@ -56,4 +56,4 @@ Check it [out here on steam](https://store.steampowered.com/news/app/2106670/vie
 
 <!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
 
---- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Dev Blog #3 - Meet New Hero!.md)
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/Dev Blog%20#3%20-%20Meet%20New%20Hero!.md)
