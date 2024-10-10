@@ -23,7 +23,7 @@ enableToc: false
 > | [[Tamer]] |  |  |  |
 > | ![Tamer](Tamer.png) |  |  |  |
 
-[!modifiers]- Modifiers
+> [!modifiers]- Modifiers
 > # Modifiers
 > | [[Adjuster]] | [[AdrenalinePill]] | [[Argument]] | [[BadMood]] |
 > |:---:|:---:|:---:|:---:|
