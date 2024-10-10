@@ -23,31 +23,30 @@ enableToc: false
 > | [[Tamer]] |  |  |  |
 > | ![Tamer](Tamer.png) |  |  |  |
 
-> [!modifiers]- Modifiers
+[!modifiers]- Modifiers
 > # Modifiers
 > | [[Adjuster]] | [[AdrenalinePill]] | [[Argument]] | [[BadMood]] |
 > |:---:|:---:|:---:|:---:|
 > | ![Adjuster](Adjuster.png) | ![Adrenaline Pill](Adrenaline%20pill_icon.png) | ![Argument](Argument.png) | ![Bad Mood](Bad_Mood.png) |
 > | [[BaneSeal]] | [[Bayonet]] | [[BluePill\|Blue Pill]] | [[Cannonade]] |
 > | ![BaneSeal](BaneSeal.png) | ![Bayonet](Bayonet.png) | ![Blue Pill](Blue_pill_icon.png) | ![Cannonade](Cannonade.png) |
-> | [[ControlModule]] | [[Detonator]] | [[Elix]] | [[EternalHeart]] |
-> | ![Control Module](Control_Module.png) | ![Detonator](Detonator.png) | ![Elix](Elix.png) | ![Eternal Heart](EternalHeart_Icon.png) |
-> | [[FirstImpression]] | [[FlameDraft]] | [[Flash]] | [[Harmony]] |
-> | ![First Impression](First_Impression.png) | ![Flame Draft](FlameDraft.png) | ![Flash](Flash_icon.png) | ![Harmony](Harmony.png) |
-> | [[HVC]] | [[Indicator]] | [[Injection]] | [[Jade]] |
-> | ![HVC](HVC.png) | ![Indicator](Indicator_icon.png) | ![Injection](Injection.png) | ![Jade](Jade.png) |
-> | [[Karma]] | [[Kettlebell]] | [[NomadStick]] | [[OpalEye]] |
-> | ![Karma](Karma.png) | ![Kettlebell](Kettlebell.png) | ![Nomad Stick](NomadStick_Icon.png) | ![Opal Eye](Opal%20eye_icon.png) |
-> | [[Overlap]] | [[ProtectiveMark]] | [[Protocol1.0]] | [[Protocol2.0]] |
-> | ![Overlap](Overlap.png) | ![Protective Sign](Protective_Sign.png) | ![Protocol 1.0](Protocol%201.0_icon.png) | ![Protocol 2.0](Protocol_2.0.png) |
-> | [[Reflex]] | [[Riposte]] | [[RuneOfRebound]] | [[SecondWind]] |
-> | ![Reflex](Reflex.png) | ![Riposte](Riposte.png) | ![Rune of Rebound](RuneOfRebound_Icon.png) | ![Second Wind](Second_Wind.png) |
-> | [[ShieldModule]] | [[Skirmish]] | [[Spark]] | [[ElisString]] |
-> | ![Shield Module](Shield_Module.png) | ![Skirmish](Skirmish.png) | ![Spark](Spark.png) | ![String of Eli](String_Of_Eli.png) |
-> | [[TarrasClaw]] | [[ThunderRing]] | [[Triumph]] | [[VertebralImplant]] |
-> | ![Tarras Claw](TarrasClaw.png) | ![Thunder Ring](Thunder_Ring.png) | ![Triumph](Triumph.png) | ![Vertebral Implant](Vertebral%20Implant_icon.png) |
-> | [[WiltHaze]] | [[YellowPill]] |  |  |
-> | ![Wilt Haze](WiltHaze.png) | ![Yellow Pill](Yellow%20pill_icon.png) |  |  |
+> | [[Detonator]] | [[Elix]] | [[EternalHeart]] | [[FirstImpression]] |
+> | ![Detonator](Detonator.png) | ![Elix](Elix.png) | ![Eternal Heart](EternalHeart_Icon.png) | ![First Impression](First_Impression.png) |
+> | [[FlameDraft]] | [[Flash]] | [[Harmony]] | [[HVC]] |
+> | ![Flame Draft](FlameDraft.png) | ![Flash](Flash_icon.png) | ![Harmony](Harmony.png) | ![HVC](HVC.png) |
+> | [[Indicator]] | [[Injection]] | [[Jade]] | [[Karma]] |
+> | ![Indicator](Indicator_icon.png) | ![Injection](Injection.png) | ![Jade](Jade.png) | ![Karma](Karma.png) |
+> | [[Kettlebell]] | [[NomadStick]] | [[OpalEye]] | [[ProtectiveMark]] |
+> | ![Kettlebell](Kettlebell.png) | ![Nomad Stick](NomadStick_Icon.png) | ![Opal Eye](Opal%20eye_icon.png) | ![Protective Sign](Protective_Sign.png) |
+> | [[Protocol1.0]] | [[Protocol2.0]] | [[Reflex]] | [[Riposte]] |
+> | ![Protocol 1.0](Protocol%201.0_icon.png) | ![Protocol 2.0](Protocol_2.0.png) | ![Reflex](Reflex.png) | ![Riposte](Riposte.png) |
+> | [[RuneOfRebound]] | [[SecondWind]] | [[ShieldModule]] | [[Skirmish]] |
+> | ![Rune of Rebound](RuneOfRebound_Icon.png) | ![Second Wind](Second_Wind.png) | ![Shield Module](Shield_Module.png) | ![Skirmish](Skirmish.png) |
+> | [[Spark]] | [[ElisString]] | [[TarrasClaw]] | [[ThunderRing]] |
+> | ![Spark](Spark.png) | ![String of Eli](String_Of_Eli.png) | ![Tarras Claw](TarrasClaw.png) | ![Thunder Ring](Thunder_Ring.png) |
+> | [[Triumph]] | [[VertebralImplant]] | [[WiltHaze]] | [[YellowPill]] |
+> | ![Triumph](Triumph.png) | ![Vertebral Implant](Vertebral%20Implant_icon.png) | ![Wilt Haze](WiltHaze.png) | ![Yellow Pill](Yellow%20pill_icon.png) |
+
 
 > [!RuneofCreation]- Rune of Creation
 > # Rune of Creation
