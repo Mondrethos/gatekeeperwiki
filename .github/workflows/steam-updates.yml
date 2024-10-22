@@ -107,8 +107,9 @@ jobs:
             
             print(f"{'Created' if is_new_file else 'Updated'} file: {file_name}")
 
-        # Write change summary for PR
+        # Write change summary
         summary = {
+            'has_changes': bool(new_files or updated_files),
             'new_files': len(new_files),
             'updated_files': len(updated_files),
             'files': {
@@ -120,15 +121,20 @@ jobs:
         with open('change_summary.json', 'w') as f:
             json.dump(summary, f)
 
-        # Exit with status 1 if no changes to prevent PR creation
+        # Signal if we have changes (but don't error if we don't)
         if not new_files and not updated_files:
             print("No changes detected, skipping PR creation")
-            exit(1)
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write('has_changes=false\n')
+            exit(0)  # Clean exit
         else:
             print(f"Changes detected: {len(new_files)} new files, {len(updated_files)} updated files")
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write('has_changes=true\n')
+            exit(0)  # Clean exit
 
     - name: Create Pull Request
-      if: success()  # Only run if previous step succeeded (had changes)
+      if: ${{ success() && steps.fetch-feed.outputs.has_changes == 'true' }}
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.PAT }}
