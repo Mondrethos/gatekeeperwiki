@@ -42,6 +42,19 @@ jobs:
         def sanitize_filename(filename):
             return re.sub(r'[<>:"/\\|?*]', '', filename)
 
+        def parse_date(date_string):
+            try:
+                # Parse date with timezone offset (%z)
+                return datetime.strptime(date_string, '%a, %d %b %Y %H:%M:%S %z')
+            except ValueError:
+                try:
+                    # Try without timezone if first attempt fails
+                    return datetime.strptime(date_string.split('+')[0].strip(), '%a, %d %b %Y %H:%M:%S')
+                except ValueError:
+                    # Fallback to current time if parsing fails
+                    print(f"Warning: Could not parse date '{date_string}', using current time")
+                    return datetime.now()
+
         feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
         feed = feedparser.parse(feed_url)
 
@@ -50,7 +63,7 @@ jobs:
         for entry in feed.entries:
             title = entry.title
             description = entry.description
-            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %Z')
+            date_str = parse_date(entry.published)
             
             safe_title = sanitize_filename(title)
             file_name = f"content/PatchNotes/{safe_title}.md"
