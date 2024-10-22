@@ -1,85 +1,86 @@
 name: Steam Updates
 
 on:
-  schedule:
-    - cron: '0 * * * *'  # Run every hour
-  workflow_dispatch:      # Allows manual trigger
+ schedule:
+   - cron: '0 * * * *'  # Run every hour
+ workflow_dispatch:      # Allows manual trigger
 
 jobs:
-  update_wiki:
-    runs-on: ubuntu-latest
+ update_wiki:
+   runs-on: ubuntu-latest
 
-    steps:
-    - name: Configure Git
-      run: |
-        git config --global user.name "GitHub Action"
-        git config --global user.email "action@github.com"
-        
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.PAT }}
-        fetch-depth: 0
+   steps:
+   - name: Configure Git
+     run: |
+       git config --global user.name "GitHub Action"
+       git config --global user.email "action@github.com"
+       
+   - name: Checkout repository
+     uses: actions/checkout@v4
+     with:
+       token: ${{ secrets.PAT }}
+       fetch-depth: 0
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+   - name: Set up Python
+     uses: actions/setup-python@v4
+     with:
+       python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install feedparser
+   - name: Install dependencies
+     run: |
+       python -m pip install --upgrade pip
+       pip install feedparser
 
-    - name: Fetch Steam RSS feed
-      run: |
-        import feedparser
-        import os
-        from datetime import datetime
-        import re
+   - name: Fetch Steam RSS feed
+     run: |
+       import feedparser
+       import os
+       from datetime import datetime
+       import re
 
-        def sanitize_filename(filename):
-            return re.sub(r'[<>:"/\\|?*]', '', filename)
+       def sanitize_filename(filename):
+           return re.sub(r'[<>:"/\\|?*]', '', filename)
 
-        feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
-        feed = feedparser.parse(feed_url)
+       feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
+       feed = feedparser.parse(feed_url)
 
-        os.makedirs('content/PatchNotes', exist_ok=True)
+       os.makedirs('content/PatchNotes', exist_ok=True)
 
-        for entry in feed.entries:
-            title = entry.title
-            description = entry.description
-            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %Z')
-            
-            safe_title = sanitize_filename(title)
-            file_name = f"content/PatchNotes/{safe_title}.md"
+       for entry in feed.entries:
+           title = entry.title
+           description = entry.description
+           date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %Z')
+           
+           safe_title = sanitize_filename(title)
+           file_name = f"content/PatchNotes/{safe_title}.md"
 
-            frontmatter = f'''---
-link: {entry.link}
+           frontmatter = '''---
+link: {}
 author: 
-date: {date_str.strftime('%Y-%m-%dT%H:%M:%S')}
+date: {}
 tags: []
 ---
 
-'''
-            file_content = frontmatter + f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
+'''.format(entry.link, date_str.strftime('%Y-%m-%dT%H:%M:%S'))
 
-            with open(file_name, 'w', encoding='utf-8') as f:
-                f.write(file_content)
-            
-            print(f"Created file: {file_name}")
-      shell: python
+           file_content = frontmatter + f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
 
-    - name: Create Pull Request
-      uses: peter-evans/create-pull-request@v5
-      with:
-        token: ${{ secrets.PAT }}
-        commit-message: Add new Steam updates
-        title: 'feat: New Steam Updates'
-        body: |
-          Automated PR for new Steam updates
-          
-          This PR was automatically generated to add new Steam updates to the wiki.
-        branch: steam-updates
-        delete-branch: true
-        base: main
+           with open(file_name, 'w', encoding='utf-8') as f:
+               f.write(file_content)
+           
+           print(f"Created file: {file_name}")
+     shell: python
+
+   - name: Create Pull Request
+     uses: peter-evans/create-pull-request@v5
+     with:
+       token: ${{ secrets.PAT }}
+       commit-message: Add new Steam updates
+       title: 'feat: New Steam Updates'
+       body: |
+         Automated PR for new Steam updates
+         
+         This PR was automatically generated to add new Steam updates to the wiki.
+       branch: steam-updates
+       delete-branch: true
+       base: main
