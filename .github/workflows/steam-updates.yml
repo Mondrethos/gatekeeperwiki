@@ -13,7 +13,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
       with:
-        token: ${{ secrets.PAT }}  # Use PAT instead of GITHUB_TOKEN
+        token: ${{ secrets.PAT }}
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -38,7 +38,7 @@ jobs:
         feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
         feed = feedparser.parse(feed_url)
 
-        os.makedirs('updates', exist_ok=True)
+        os.makedirs('content/PatchNotes', exist_ok=True)
 
         for entry in feed.entries:
             title = entry.title
@@ -46,7 +46,7 @@ jobs:
             date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').strftime('%Y-%m-%d')
             
             safe_title = sanitize_filename(title)
-            file_name = f"updates/{date_str}-{safe_title}.md"
+            file_name = f"content/PatchNotes/{safe_title}.md"
 
             file_content = f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
 
@@ -59,7 +59,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
-        token: ${{ secrets.PAT }}  # Use PAT here too
+        token: ${{ secrets.PAT }}
         commit-message: Add new Steam updates
         title: 'feat: New Steam Updates'
         body: |
