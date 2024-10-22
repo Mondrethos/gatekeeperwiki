@@ -49,12 +49,21 @@ jobs:
         for entry in feed.entries:
             title = entry.title
             description = entry.description
-            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').strftime('%Y-%m-%d')
+            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z')
             
             safe_title = sanitize_filename(title)
             file_name = f"content/PatchNotes/{safe_title}.md"
 
-            file_content = f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
+            # Create the frontmatter
+            frontmatter = f"""---
+link: {entry.link}
+author: 
+date: {date_str.strftime('%Y-%m-%dT%H:%M:%S')}
+tags: []
+---
+
+"""
+            file_content = frontmatter + f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
 
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write(file_content)
