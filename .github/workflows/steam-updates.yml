@@ -42,6 +42,16 @@ jobs:
         def sanitize_filename(filename):
             return re.sub(r'[<>:"/\\|?*]', '', filename)
 
+        def escape_yaml(text):
+            if not text:
+                return ''
+            # Escape special characters and quotes
+            text = str(text).replace('"', '\\"').replace("'", "\\'")
+            # If text contains newlines or special chars, wrap in quotes
+            if '\n' in text or any(c in text for c in ':{}[]!&*#?|-<>=!%@'):
+                text = f'"{text}"'
+            return text
+
         feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
         feed = feedparser.parse(feed_url)
 
@@ -55,15 +65,28 @@ jobs:
             safe_title = sanitize_filename(title)
             file_name = f"content/PatchNotes/{safe_title}.md"
 
+            # Create YAML-safe frontmatter
+            yaml_link = escape_yaml(entry.link)
+            yaml_date = date_str.strftime('%Y-%m-%dT%H:%M:%S')
+            
             frontmatter = f'''---
-link: {entry.link}
-author: 
-date: {date_str.strftime('%Y-%m-%dT%H:%M:%S')}
-tags: []
+link: {yaml_link}
+author: "Steam"
+date: "{yaml_date}"
+tags: ["patch-notes"]
 ---
 
 '''
-            file_content = frontmatter + f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
+            
+            # Escape the title and description for the markdown content
+            md_title = title.replace('"', '\\"')
+            md_description = description.replace('"', '\\"')
+            
+            file_content = (
+                frontmatter +
+                f"# {md_title}\n\n{md_description}\n\n" +
+                f"Published on: {entry.published}"
+            )
 
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write(file_content)
