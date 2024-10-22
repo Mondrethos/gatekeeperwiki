@@ -3,17 +3,21 @@ name: Steam Updates
 on:
   schedule:
     - cron: '0 * * * *'  # Run every hour
+  workflow_dispatch:      # Allows manual trigger
 
 jobs:
   update_wiki:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v2
+      uses: actions/setup-python@v4
       with:
         python-version: '3.x'
 
@@ -24,33 +28,55 @@ jobs:
 
     - name: Fetch Steam RSS feed
       run: |
-        python << EOF
+        python << 'EOF'
         import feedparser
         import os
+        from datetime import datetime
+        import re
+
+        def sanitize_filename(filename):
+            # Remove invalid filename characters
+            return re.sub(r'[<>:"/\\|?*]', '', filename)
 
         feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
         feed = feedparser.parse(feed_url)
 
+        os.makedirs('updates', exist_ok=True)
+
         for entry in feed.entries:
-          title = entry.title
-          description = entry.description
-          published_date = entry.published
+            title = entry.title
+            description = entry.description
+            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').strftime('%Y-%m-%d')
+            
+            # Create sanitized filename
+            safe_title = sanitize_filename(title)
+            file_name = f"updates/{date_str}-{safe_title}.md"
 
-          # Generate the file name
-          file_name = f"{published_date}-{title}.md"
+            # Create the file content
+            file_content = f"""# {title}
 
-          # Create the file content
-          file_content = f"# {title}\n\n{description}\n\nPublished on: {published_date}"
+{description}
 
-          # Write the file to the repository
-          with open(file_name, 'w') as f:
-            f.write(file_content)
+Published on: {entry.published}
+"""
+
+            # Write the file to the repository
+            with open(file_name, 'w', encoding='utf-8') as f:
+                f.write(file_content)
+            
+            print(f"Created file: {file_name}")
         EOF
 
-    - name: Create pull request
-      uses: peter-evans/create-pull-request@v3
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
       with:
-        title: "Steam Updates"
-        body: "Automated pull request for Steam updates"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Add new Steam updates
+        title: 'feat: New Steam Updates'
+        body: |
+          Automated PR for new Steam updates
+          
+          This PR was automatically generated to add new Steam updates to the wiki.
         branch: steam-updates
-        assignees: Mondrethos
+        delete-branch: true
+        base: main
