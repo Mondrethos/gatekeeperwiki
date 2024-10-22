@@ -1,0 +1,56 @@
+name: Steam Updates
+
+on:
+  schedule:
+    - cron: '0 * * * *'  # Run every hour
+
+jobs:
+  update_wiki:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install feedparser
+
+    - name: Fetch Steam RSS feed
+      run: |
+        python << EOF
+        import feedparser
+        import os
+
+        feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
+        feed = feedparser.parse(feed_url)
+
+        for entry in feed.entries:
+          title = entry.title
+          description = entry.description
+          published_date = entry.published
+
+          # Generate the file name
+          file_name = f"{published_date}-{title}.md"
+
+          # Create the file content
+          file_content = f"# {title}\n\n{description}\n\nPublished on: {published_date}"
+
+          # Write the file to the repository
+          with open(file_name, 'w') as f:
+            f.write(file_content)
+        EOF
+
+    - name: Create pull request
+      uses: peter-evans/create-pull-request@v3
+      with:
+        title: "Steam Updates"
+        body: "Automated pull request for Steam updates"
+        branch: steam-updates
+        assignees: Mondrethos
