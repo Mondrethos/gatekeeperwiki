@@ -8,13 +8,12 @@ on:
 jobs:
   update_wiki:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pull-requests: write
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.PAT }}  # Use PAT instead of GITHUB_TOKEN
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -60,7 +59,7 @@ jobs:
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.PAT }}  # Use PAT here too
         commit-message: Add new Steam updates
         title: 'feat: New Steam Updates'
         body: |
