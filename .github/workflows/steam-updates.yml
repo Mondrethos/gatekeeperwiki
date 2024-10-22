@@ -33,43 +33,42 @@ jobs:
 
     - name: Fetch Steam RSS feed
       shell: python
-      run: >-
-        import feedparser;
-        import os;
-        from datetime import datetime;
-        import re;
+      run: |
+        import feedparser
+        import os
+        from datetime import datetime
+        import re
 
         def sanitize_filename(filename):
-            return re.sub(r'[<>:"/\\|?*]', '', filename);
+            return re.sub(r'[<>:"/\\|?*]', '', filename)
 
-        feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107';
-        feed = feedparser.parse(feed_url);
+        feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
+        feed = feedparser.parse(feed_url)
 
-        os.makedirs('content/PatchNotes', exist_ok=True);
+        os.makedirs('content/PatchNotes', exist_ok=True)
 
         for entry in feed.entries:
-            title = entry.title;
-            description = entry.description;
-            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %Z');
+            title = entry.title
+            description = entry.description
+            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %Z')
             
-            safe_title = sanitize_filename(title);
-            file_name = f"content/PatchNotes/{safe_title}.md";
+            safe_title = sanitize_filename(title)
+            file_name = f"content/PatchNotes/{safe_title}.md"
 
-            frontmatter = '''---
-link: {}
+            frontmatter = f'''---
+link: {entry.link}
 author: 
-date: {}
+date: {date_str.strftime('%Y-%m-%dT%H:%M:%S')}
 tags: []
 ---
 
-'''.format(entry.link, date_str.strftime('%Y-%m-%dT%H:%M:%S'));
-
-            file_content = frontmatter + f"# {title}\n\n{description}\n\nPublished on: {entry.published}";
+'''
+            file_content = frontmatter + f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
 
             with open(file_name, 'w', encoding='utf-8') as f:
-                f.write(file_content);
+                f.write(file_content)
             
-            print(f"Created file: {file_name}");
+            print(f"Created file: {file_name}")
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
