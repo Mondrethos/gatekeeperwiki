@@ -28,14 +28,12 @@ jobs:
 
     - name: Fetch Steam RSS feed
       run: |
-        python << 'EOF'
         import feedparser
         import os
         from datetime import datetime
         import re
 
         def sanitize_filename(filename):
-            # Remove invalid filename characters
             return re.sub(r'[<>:"/\\|?*]', '', filename)
 
         feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
@@ -48,24 +46,16 @@ jobs:
             description = entry.description
             date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').strftime('%Y-%m-%d')
             
-            # Create sanitized filename
             safe_title = sanitize_filename(title)
             file_name = f"updates/{date_str}-{safe_title}.md"
 
-            # Create the file content
-            file_content = f"""# {title}
+            file_content = f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
 
-{description}
-
-Published on: {entry.published}
-"""
-
-            # Write the file to the repository
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write(file_content)
             
             print(f"Created file: {file_name}")
-        EOF
+      shell: python
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
