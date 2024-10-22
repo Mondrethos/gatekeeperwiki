@@ -38,6 +38,7 @@ jobs:
         import os
         from datetime import datetime
         import re
+        import json
 
         def sanitize_filename(filename):
             return re.sub(r'[<>:"/\\|?*]', '', filename)
@@ -55,6 +56,10 @@ jobs:
                     print(f"Warning: Could not parse date '{date_string}', using current time")
                     return datetime.now()
 
+        # Track changes
+        new_files = []
+        updated_files = []
+
         feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
         feed = feedparser.parse(feed_url)
 
@@ -68,7 +73,10 @@ jobs:
             safe_title = sanitize_filename(title)
             file_name = f"content/PatchNotes/{safe_title}.md"
             
-            # Build the frontmatter line by line to avoid YAML parsing issues
+            # Check if file already exists
+            is_new_file = not os.path.exists(file_name)
+            
+            # Build the frontmatter
             frontmatter = "---\n"
             frontmatter += f"link: '{entry.link}'\n"
             frontmatter += "author: 'Steam'\n"
@@ -76,18 +84,51 @@ jobs:
             frontmatter += "tags: ['patch-notes']\n"
             frontmatter += "---\n\n"
             
-            # Create the content separately
             content = f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
-            
-            # Combine frontmatter and content
             file_content = frontmatter + content
 
+            # If file exists, check if content is different
+            if not is_new_file:
+                try:
+                    with open(file_name, 'r', encoding='utf-8') as f:
+                        existing_content = f.read()
+                    if existing_content == file_content:
+                        continue  # Skip if content hasn't changed
+                    updated_files.append(file_name)
+                except Exception as e:
+                    print(f"Error reading existing file: {e}")
+                    updated_files.append(file_name)
+            else:
+                new_files.append(file_name)
+
+            # Write the file
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write(file_content)
             
-            print(f"Created file: {file_name}")
+            print(f"{'Created' if is_new_file else 'Updated'} file: {file_name}")
+
+        # Write change summary for PR
+        summary = {
+            'new_files': len(new_files),
+            'updated_files': len(updated_files),
+            'files': {
+                'new': new_files,
+                'updated': updated_files
+            }
+        }
+        
+        with open('change_summary.json', 'w') as f:
+            json.dump(summary, f)
+
+        # Exit with status 1 if no changes to prevent PR creation
+        if not new_files and not updated_files:
+            print("No changes detected, skipping PR creation")
+            exit(1)
+        else:
+            print(f"Changes detected: {len(new_files)} new files, {len(updated_files)} updated files")
 
     - name: Create Pull Request
+      if: success()  # Only run if previous step succeeded (had changes)
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.PAT }}
@@ -95,6 +136,10 @@ jobs:
         title: 'feat: New Steam Updates'
         body: |
           Automated PR for new Steam updates
+          
+          Changes in this PR:
+          - New files: ${{ env.new_files }}
+          - Updated files: ${{ env.updated_files }}
           
           This PR was automatically generated to add new Steam updates to the wiki.
         branch: steam-updates
