@@ -37,8 +37,8 @@ _Gatekeeper is a fast-paced rogue-lite. Go on a quest to find the stolen Heart o
 <div class="description">Achievements, what they unlock and tips on how to accomplish them.</div>
 </a>
 
-<a href="[[Enemies and Bosses]]" class="grid-item type-5">
-<div class="icon"><img src="/assets/Enemies/aurora/Prince_Icon.png" alt="Enemies and Bosses" style="width: 50px; height: 50px;"></div>
+<a href="AllMonsters" class="grid-item type-5">
+<div class="icon"><img src="/assets/Enemies/aurora/Prince_Icon.png" alt="Monsters" style="width: 50px; height: 50px;"></div>
 <div class="title">Enemies and Bosses</div>
 <div class="description">Careful where you step.</div>
 </a>
