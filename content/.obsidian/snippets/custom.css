@@ -424,6 +424,258 @@
   }
 }
 
+.callout {
+  &[data-callout="spawned"] {
+    --color: #000;
+    --border: #FFFFFF;  /* White from [Spawned] text */
+    --bg: #222;
+
+    width: 300px;
+    border: 1px solid var(--border);
+    background-color: var(--bg);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--color);
+    float: right;
+    margin: -10px 10px 10px 10px;
+  }
+
+  &[data-callout="spawned"] .callout-icon {
+    display: none;
+  }
+
+  &[data-callout="spawned"] .callout-title {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    padding: 5px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    margin: -10px -10px 10px -10px;
+  }
+
+  &[data-callout="spawned"] .callout-content {
+    padding: 5px 0;
+  }
+
+  &[data-callout="spawned"] .callout-content h3 {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  &[data-callout="spawned"] .callout-content p {
+    margin: 5px 0;
+  }
+
+  &[data-callout="spawned"] .callout-content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    &[data-callout="spawned"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    &[data-callout="spawned"] .callout-title {
+      margin: 0;
+    }
+  }
+}
+
+.callout {
+  &[data-callout="base"] {
+    --color: #000;
+    --border: #00FFFF;  /* Cyan from [Base] text */
+    --bg: #222;
+
+    width: 300px;
+    border: 1px solid var(--border);
+    background-color: var(--bg);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--color);
+    float: right;
+    margin: -10px 10px 10px 10px;
+  }
+
+  &[data-callout="base"] .callout-icon {
+    display: none;
+  }
+
+  &[data-callout="base"] .callout-title {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #00FFFF;
+    padding: 5px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    margin: -10px -10px 10px -10px;
+  }
+
+  &[data-callout="base"] .callout-content {
+    padding: 5px 0;
+  }
+
+  &[data-callout="base"] .callout-content h3 {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  &[data-callout="base"] .callout-content p {
+    margin: 5px 0;
+  }
+
+  &[data-callout="base"] .callout-content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    &[data-callout="base"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    &[data-callout="base"] .callout-title {
+      margin: 0;
+    }
+  }
+}
+
+.callout {
+  &[data-callout="rampant"] {
+    --color: #000;
+    --border: #FFD700;  /* Gold from [Rampant] text */
+    --bg: #222;
+
+    width: 300px;
+    border: 1px solid var(--border);
+    background-color: var(--bg);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--color);
+    float: right;
+    margin: -10px 10px 10px 10px;
+  }
+
+  &[data-callout="rampant"] .callout-icon {
+    display: none;
+  }
+
+  &[data-callout="rampant"] .callout-title {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FFD700;
+    padding: 5px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    margin: -10px -10px 10px -10px;
+  }
+
+  &[data-callout="rampant"] .callout-content {
+    padding: 5px 0;
+  }
+
+  &[data-callout="rampant"] .callout-content h3 {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  &[data-callout="rampant"] .callout-content p {
+    margin: 5px 0;
+  }
+
+  &[data-callout="rampant"] .callout-content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    &[data-callout="rampant"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    &[data-callout="rampant"] .callout-title {
+      margin: 0;
+    }
+  }
+}
+
+.callout {
+  &[data-callout="siren"] {
+    --color: #000;
+    --border: #FF0000;  /* Red from [Siren] text */
+    --bg: #222;
+
+    width: 300px;
+    border: 1px solid var(--border);
+    background-color: var(--bg);
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--color);
+    float: right;
+    margin: -10px 10px 10px 10px;
+  }
+
+  &[data-callout="siren"] .callout-icon {
+    display: none;
+  }
+
+  &[data-callout="siren"] .callout-title {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #FF0000;
+    padding: 5px;
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    margin: -10px -10px 10px -10px;
+    color: #fff;  /* White text for better contrast on red */
+  }
+
+  &[data-callout="siren"] .callout-content {
+    padding: 5px 0;
+  }
+
+  &[data-callout="siren"] .callout-content h3 {
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  &[data-callout="siren"] .callout-content p {
+    margin: 5px 0;
+  }
+
+  &[data-callout="siren"] .callout-content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) {
+    &[data-callout="siren"] {
+      float: none;
+      width: 100%;
+      margin: 10px 0;
+    }
+
+    &[data-callout="siren"] .callout-title {
+      margin: 0;
+    }
+  }
+}
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
