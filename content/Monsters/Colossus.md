@@ -12,6 +12,7 @@ Colossus, the ancient protector of Aridune, dates back dozens of thousands of ye
 
 > [!note] Base Stats
 > Base health level: 9500
+> 
 > Base damage: 50
 
 > [!note] Abilities
