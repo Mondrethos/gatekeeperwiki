@@ -32,14 +32,33 @@ jobs:
         pip install feedparser
 
     - name: Fetch Steam RSS feed
+      shell: python
       run: |
         import feedparser
         import os
         from datetime import datetime
         import re
+        import json
 
         def sanitize_filename(filename):
             return re.sub(r'[<>:"/\\|?*]', '', filename)
+
+        def parse_date(date_string):
+            try:
+                # Parse date with timezone offset (%z)
+                return datetime.strptime(date_string, '%a, %d %b %Y %H:%M:%S %z')
+            except ValueError:
+                try:
+                    # Try without timezone if first attempt fails
+                    return datetime.strptime(date_string.split('+')[0].strip(), '%a, %d %b %Y %H:%M:%S')
+                except ValueError:
+                    # Fallback to current time if parsing fails
+                    print(f"Warning: Could not parse date '{date_string}', using current time")
+                    return datetime.now()
+
+        # Track changes
+        new_files = []
+        updated_files = []
 
         feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
         feed = feedparser.parse(feed_url)
@@ -49,20 +68,73 @@ jobs:
         for entry in feed.entries:
             title = entry.title
             description = entry.description
-            date_str = datetime.strptime(entry.published, '%a, %d %b %Y %H:%M:%S %z').strftime('%Y-%m-%d')
+            date_str = parse_date(entry.published)
             
             safe_title = sanitize_filename(title)
             file_name = f"content/PatchNotes/{safe_title}.md"
+            
+            # Check if file already exists
+            is_new_file = not os.path.exists(file_name)
+            
+            # Build the frontmatter
+            frontmatter = "---\n"
+            frontmatter += f"link: '{entry.link}'\n"
+            frontmatter += "author: 'Steam'\n"
+            frontmatter += f"date: '{date_str.strftime('%Y-%m-%dT%H:%M:%S')}'\n"
+            frontmatter += "tags: ['patch-notes']\n"
+            frontmatter += "---\n\n"
+            
+            content = f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
+            file_content = frontmatter + content
 
-            file_content = f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
+            # If file exists, check if content is different
+            if not is_new_file:
+                try:
+                    with open(file_name, 'r', encoding='utf-8') as f:
+                        existing_content = f.read()
+                    if existing_content == file_content:
+                        continue  # Skip if content hasn't changed
+                    updated_files.append(file_name)
+                except Exception as e:
+                    print(f"Error reading existing file: {e}")
+                    updated_files.append(file_name)
+            else:
+                new_files.append(file_name)
 
+            # Write the file
             with open(file_name, 'w', encoding='utf-8') as f:
                 f.write(file_content)
             
-            print(f"Created file: {file_name}")
-      shell: python
+            print(f"{'Created' if is_new_file else 'Updated'} file: {file_name}")
+
+        # Write change summary
+        summary = {
+            'has_changes': bool(new_files or updated_files),
+            'new_files': len(new_files),
+            'updated_files': len(updated_files),
+            'files': {
+                'new': new_files,
+                'updated': updated_files
+            }
+        }
+        
+        with open('change_summary.json', 'w') as f:
+            json.dump(summary, f)
+
+        # Signal if we have changes (but don't error if we don't)
+        if not new_files and not updated_files:
+            print("No changes detected, skipping PR creation")
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write('has_changes=false\n')
+            exit(0)  # Clean exit
+        else:
+            print(f"Changes detected: {len(new_files)} new files, {len(updated_files)} updated files")
+            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                f.write('has_changes=true\n')
+            exit(0)  # Clean exit
 
     - name: Create Pull Request
+      if: ${{ success() && steps.fetch-feed.outputs.has_changes == 'true' }}
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.PAT }}
@@ -70,6 +142,10 @@ jobs:
         title: 'feat: New Steam Updates'
         body: |
           Automated PR for new Steam updates
+          
+          Changes in this PR:
+          - New files: ${{ env.new_files }}
+          - Updated files: ${{ env.updated_files }}
           
           This PR was automatically generated to add new Steam updates to the wiki.
         branch: steam-updates
