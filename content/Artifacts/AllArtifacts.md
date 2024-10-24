@@ -5,44 +5,66 @@ enableToc: false
 
 > [!amulets]+ Amulets
 > # Amulets
-> | [![Buzz](Buzz.png)<br>**Buzz**](Buzz) | [![Deadeye](Deadeye.png)<br>**Deadeye**](Deadeye) | [![Duo](Duo.png)<br>**Duo**](Duo) | [![HeatConcentrate](Heat%20Concentrate.png)<br>**Heat Concentrate**](HeatConcentrate) |
+> | [![Buzz](Buzz.png)](Buzz) | [![Deadeye](Deadeye.png)](Deadeye) | [![Duo](Duo.png)](Duo) | [![Heat Concentrate](Heat%20Concentrate.png)](HeatConcentrate) |
 > |:---:|:---:|:---:|:---:|
-> | [![HollowTalisman](HollowTalisman_Icon.png)<br>**Hollow Talisman**](HollowTalisman) | [![Juju](Juju.png)<br>**Juju**](Juju) | [![SootheStone](Soothe%20Stone.png)<br>**Soothe Stone**](SootheStone) | [![SwarmPendant](SwarmPendant_icon.png)<br>**Swarm Pendant**](SwarmPendant) |
-> | [![Vanguard](Vanguard.png)<br>**Vanguard**](Vanguard) | [![VeilTalisman](Veil%20Talisman.png)<br>**Veil Talisman**](VeilTalisman) |  |  |
+> | **[Buzz](Buzz)** | **[Deadeye](Deadeye)** | **[Duo](Duo)** | **[Heat Concentrate](HeatConcentrate)** |
+> | [![Hollow Talisman](HollowTalisman_Icon.png)](HollowTalisman) | [![Juju](Juju.png)](Juju) | [![Soothe Stone](Soothe%20Stone.png)](SootheStone) | [![Swarm Pendant](SwarmPendant_icon.png)](SwarmPendant) |
+> | **[Hollow Talisman](HollowTalisman)** | **[Juju](Juju)** | **[Soothe Stone](SootheStone)** | **[Swarm Pendant](SwarmPendant)** |
+> | [![Vanguard](Vanguard.png)](Vanguard) | [![Veil Talisman](Veil%20Talisman.png)](VeilTalisman) | | |
+> | **[Vanguard](Vanguard)** | **[Veil Talisman](VeilTalisman)** | | |
 
 > [!cursed]- Cursed Signature
 > # Cursed Signature
-> | [![BalefulBoon](BalefulBoon.png)<br>**Baleful Boon**](BalefulBoon) | [![CalamitysPact](Calamity_s%20Pact.png)<br>**Calamity's Pact**](CalamitysPact) | [![CursedShard](CursedShard_icon.png)<br>**Cursed Shard**](CursedShard) | [![Eminence](Eminence_Icon.png)<br>**Eminence**](Eminence) |
+> | [![Baleful Boon](BalefulBoon.png)](BalefulBoon) | [![Calamity's Pact](Calamity_s%20Pact.png)](CalamitysPact) | [![Cursed Shard](CursedShard_icon.png)](CursedShard) | [![Eminence](Eminence_Icon.png)](Eminence) |
 > |:---:|:---:|:---:|:---:|
-> | [![EmptyCarapace](EmptyCarapace_Icon.png)<br>**Empty Carapace**](EmptyCarapace) | [![GreedsGambit](GreedsGambit.png)<br>**Greed's Gambit**](GreedsGambit) | [![RitualVessel](RitualVessel_icon.png)<br>**Ritual Vessel**](RitualVessel) | [![Superiority](Superiority.png)<br>**Superiority**](Superiority) |
-> | [![Tamer](Tamer.png)<br>**Tamer**](Tamer) |  |  |  |
+> | **[Baleful Boon](BalefulBoon)** | **[Calamity's Pact](CalamitysPact)** | **[Cursed Shard](CursedShard)** | **[Eminence](Eminence)** |
+> | [![Empty Carapace](EmptyCarapace_Icon.png)](EmptyCarapace) | [![Greed's Gambit](GreedsGambit.png)](GreedsGambit) | [![Ritual Vessel](RitualVessel_icon.png)](RitualVessel) | [![Superiority](Superiority.png)](Superiority) |
+> | **[Empty Carapace](EmptyCarapace)** | **[Greed's Gambit](GreedsGambit)** | **[Ritual Vessel](RitualVessel)** | **[Superiority](Superiority)** |
+> | [![Tamer](Tamer.png)](Tamer) | | | |
+> | **[Tamer](Tamer)** | | | |
 
 > [!modifiers]- Modifiers
 > # Modifiers
-> | [![Adjuster](Adjuster.png)<br>**Adjuster**](Adjuster) | [![AdrenalinePill](Adrenaline%20pill_icon.png)<br>**Adrenaline Pill**](AdrenalinePill) | [![Argument](Argument.png)<br>**Argument**](Argument) | [![BadMood](Bad_Mood.png)<br>**Bad Mood**](BadMood) |
+> | [![Adjuster](Adjuster.png)](Adjuster) | [![Adrenaline Pill](Adrenaline%20pill_icon.png)](AdrenalinePill) | [![Argument](Argument.png)](Argument) | [![Bad Mood](Bad_Mood.png)](BadMood) |
 > |:---:|:---:|:---:|:---:|
-> | [![BaneSeal](BaneSeal.png)<br>**Bane Seal**](BaneSeal) | [![Bayonet](Bayonet.png)<br>**Bayonet**](Bayonet) | [![BluePill](Blue_pill_icon.png)<br>**Blue Pill**](BluePill) | [![Cannonade](Cannonade.png)<br>**Cannonade**](Cannonade) |
-> | [![Detonator](Detonator.png)<br>**Detonator**](Detonator) | [![Elix](Elix.png)<br>**Elix**](Elix) | [![EternalHeart](EternalHeart_Icon.png)<br>**Eternal Heart**](EternalHeart) | [![FirstImpression](First_Impression.png)<br>**First Impression**](FirstImpression) |
-> | [![FlameDraft](FlameDraft.png)<br>**Flame Draft**](FlameDraft) | [![Flash](Flash_icon.png)<br>**Flash**](Flash) | [![Harmony](Harmony.png)<br>**Harmony**](Harmony) | [![HVC](HVC.png)<br>**HVC**](HVC) |
-> | [![Indicator](Indicator_icon.png)<br>**Indicator**](Indicator) | [![Injection](Injection.png)<br>**Injection**](Injection) | [![Jade](Jade.png)<br>**Jade**](Jade) | [![Karma](Karma.png)<br>**Karma**](Karma) |
-> | [![Kettlebell](Kettlebell.png)<br>**Kettlebell**](Kettlebell) | [![NomadStick](NomadStick_Icon.png)<br>**Nomad Stick**](NomadStick) | [![OpalEye](Opal%20eye_icon.png)<br>**Opal Eye**](OpalEye) | [![ProtectiveMark](Protective_Sign.png)<br>**Protective Mark**](ProtectiveMark) |
-> | [![Protocol1.0](Protocol%201.0_icon.png)<br>**Protocol 1.0**](Protocol1.0) | [![Protocol2.0](Protocol_2.0.png)<br>**Protocol 2.0**](Protocol2.0) | [![Reflex](Reflex.png)<br>**Reflex**](Reflex) | [![Riposte](Riposte.png)<br>**Riposte**](Riposte) |
-> | [![RuneOfRebound](RuneOfRebound_Icon.png)<br>**Rune of Rebound**](RuneOfRebound) | [![SecondWind](Second_Wind.png)<br>**Second Wind**](SecondWind) | [![ShieldModule](Shield_Module.png)<br>**Shield Module**](ShieldModule) | [![Skirmish](Skirmish.png)<br>**Skirmish**](Skirmish) |
-> | [![Spark](Spark.png)<br>**Spark**](Spark) | [![ElisString](String_Of_Eli.png)<br>**Eli's String**](ElisString) | [![TarrasClaw](TarrasClaw.png)<br>**Tarra's Claw**](TarrasClaw) | [![ThunderRing](Thunder_Ring.png)<br>**Thunder Ring**](ThunderRing) |
-> | [![Triumph](Triumph.png)<br>**Triumph**](Triumph) | [![VertebralImplant](Vertebral%20Implant_icon.png)<br>**Vertebral Implant**](VertebralImplant) | [![WiltHaze](WiltHaze.png)<br>**Wilt Haze**](WiltHaze) | [![YellowPill](Yellow%20pill_icon.png)<br>**Yellow Pill**](YellowPill) |
+> | **[Adjuster](Adjuster)** | **[Adrenaline Pill](AdrenalinePill)** | **[Argument](Argument)** | **[Bad Mood](BadMood)** |
+> | [![Bane Seal](BaneSeal.png)](BaneSeal) | [![Bayonet](Bayonet.png)](Bayonet) | [![Blue Pill](Blue_pill_icon.png)](BluePill) | [![Cannonade](Cannonade.png)](Cannonade) |
+> | **[Bane Seal](BaneSeal)** | **[Bayonet](Bayonet)** | **[Blue Pill](BluePill)** | **[Cannonade](Cannonade)** |
+> | [![Detonator](Detonator.png)](Detonator) | [![Elix](Elix.png)](Elix) | [![Eternal Heart](EternalHeart_Icon.png)](EternalHeart) | [![First Impression](First_Impression.png)](FirstImpression) |
+> | **[Detonator](Detonator)** | **[Elix](Elix)** | **[Eternal Heart](EternalHeart)** | **[First Impression](FirstImpression)** |
+> | [![Flame Draft](FlameDraft.png)](FlameDraft) | [![Flash](Flash_icon.png)](Flash) | [![Harmony](Harmony.png)](Harmony) | [![HVC](HVC.png)](HVC) |
+> | **[Flame Draft](FlameDraft)** | **[Flash](Flash)** | **[Harmony](Harmony)** | **[HVC](HVC)** |
+> | [![Indicator](Indicator_icon.png)](Indicator) | [![Injection](Injection.png)](Injection) | [![Jade](Jade.png)](Jade) | [![Karma](Karma.png)](Karma) |
+> | **[Indicator](Indicator)** | **[Injection](Injection)** | **[Jade](Jade)** | **[Karma](Karma)** |
+> | [![Kettlebell](Kettlebell.png)](Kettlebell) | [![Nomad Stick](NomadStick_Icon.png)](NomadStick) | [![Opal Eye](Opal%20eye_icon.png)](OpalEye) | [![Protective Mark](Protective_Sign.png)](ProtectiveMark) |
+> | **[Kettlebell](Kettlebell)** | **[Nomad Stick](NomadStick)** | **[Opal Eye](OpalEye)** | **[Protective Mark](ProtectiveMark)** |
+> | [![Protocol 1.0](Protocol%201.0_icon.png)](Protocol1.0) | [![Protocol 2.0](Protocol_2.0.png)](Protocol2.0) | [![Reflex](Reflex.png)](Reflex) | [![Riposte](Riposte.png)](Riposte) |
+> | **[Protocol 1.0](Protocol1.0)** | **[Protocol 2.0](Protocol2.0)** | **[Reflex](Reflex)** | **[Riposte](Riposte)** |
+> | [![Rune of Rebound](RuneOfRebound_Icon.png)](RuneOfRebound) | [![Second Wind](Second_Wind.png)](SecondWind) | [![Shield Module](Shield_Module.png)](ShieldModule) | [![Skirmish](Skirmish.png)](Skirmish) |
+> | **[Rune of Rebound](RuneOfRebound)** | **[Second Wind](SecondWind)** | **[Shield Module](ShieldModule)** | **[Skirmish](Skirmish)** |
+> | [![Spark](Spark.png)](Spark) | [![String of Eli](String_Of_Eli.png)](ElisString) | [![Tarra's Claw](TarrasClaw.png)](TarrasClaw) | [![Thunder Ring](Thunder_Ring.png)](ThunderRing) |
+> | **[Spark](Spark)** | **[String of Eli](ElisString)** | **[Tarra's Claw](TarrasClaw)** | **[Thunder Ring](ThunderRing)** |
+> | [![Triumph](Triumph.png)](Triumph) | [![Vertebral Implant](Vertebral%20Implant_icon.png)](VertebralImplant) | [![Wilt Haze](WiltHaze.png)](WiltHaze) | [![Yellow Pill](Yellow%20pill_icon.png)](YellowPill) |
+> | **[Triumph](Triumph)** | **[Vertebral Implant](VertebralImplant)** | **[Wilt Haze](WiltHaze)** | **[Yellow Pill](YellowPill)** |
 
 > [!RuneofCreation]- Rune of Creation
 > # Rune of Creation
-> | [![ArcanumsBounty](Arcanum_s%20Bounty.png)<br>**Arcanum's Bounty**](ArcanumsBounty) | [![Critica](Critica.png)<br>**Critica**](Critica) | [![Cyclone](Cyclone.png)<br>**Cyclone**](Cyclone) | [![Essence](Essence_Icon.png)<br>**Essence**](Essence) |
+> | [![Arcanum's Bounty](Arcanum_s%20Bounty.png)](ArcanumsBounty) | [![Critica](Critica.png)](Critica) | [![Cyclone](Cyclone.png)](Cyclone) | [![Essence](Essence_Icon.png)](Essence) |
 > |:---:|:---:|:---:|:---:|
-> | [![Fractal](Fractal_Icon.png)<br>**Fractal**](Fractal) | [![Fuse](Fuse_Icon.png)<br>**Fuse**](Fuse) | [![Infurion](Infurion.png)<br>**Infurion**](Infurion) | [![Rendstone](Rendstone.png)<br>**Rendstone**](Rendstone) |
+> | **[Arcanum's Bounty](ArcanumsBounty)** | **[Critica](Critica)** | **[Cyclone](Cyclone)** | **[Essence](Essence)** |
+> | [![Fractal](Fractal_Icon.png)](Fractal) | [![Fuse](Fuse_Icon.png)](Fuse) | [![Infurion](Infurion.png)](Infurion) | [![Rendstone](Rendstone.png)](Rendstone) |
+> | **[Fractal](Fractal)** | **[Fuse](Fuse)** | **[Infurion](Infurion)** | **[Rendstone](Rendstone)** |
 
 > [!StructureChange]- Structure Change
 > # Structure Change
-> | [![ChargedCore](ChargedCore_Icon.png)<br>**Charged Core**](ChargedCore) | [![CinderFlare](CinderFlare.png)<br>**Cinder Flare**](CinderFlare) | [![Confines](Confines_Icon.png)<br>**Confines**](Confines) | [![CutClout](CutClout.png)<br>**Cut Clout**](CutClout) |
+> | [![Charged Core](ChargedCore_Icon.png)](ChargedCore) | [![Cinder Flare](CinderFlare.png)](CinderFlare) | [![Confines](Confines_Icon.png)](Confines) | [![Cut Clout](CutClout.png)](CutClout) |
 > |:---:|:---:|:---:|:---:|
-> | [![Delugeon](Delugeon.png)<br>**Delugeon**](Delugeon) | [![Enhancer](Enhancer_Icon.png)<br>**Enhancer**](Enhancer) | [![Eruptor](Eruptor.png)<br>**Eruptor**](Eruptor) | [![Extrasystole](Extrasystole.png)<br>**Extrasystole**](Extrasystole) |
-> | [![Inertia](Inertia_Icon.png)<br>**Inertia**](Inertia) | [![Lumilore](Lumilore.png)<br>**Lumilore**](Lumilore) | [![Riftmaker](Riftmaker.png)<br>**Riftmaker**](Riftmaker) | [![Rippletide](Rippletide.png)<br>**Rippletide**](Rippletide) |
-> | [![SoulWeaver](SoulWeaver.png)<br>**Soul Weaver**](SoulWeaver) | [![Source](Source_Icon.png)<br>**Source**](Source) |  |  |
+> | **[Charged Core](ChargedCore)** | **[Cinder Flare](CinderFlare)** | **[Confines](Confines)** | **[Cut Clout](CutClout)** |
+> | [![Delugeon](Delugeon.png)](Delugeon) | [![Enhancer](Enhancer_Icon.png)](Enhancer) | [![Eruptor](Eruptor.png)](Eruptor) | [![Extrasystole](Extrasystole.png)](Extrasystole) |
+> | **[Delugeon](Delugeon)** | **[Enhancer](Enhancer)** | **[Eruptor](Eruptor)** | **[Extrasystole](Extrasystole)** |
+> | [![Inertia](Inertia_Icon.png)](Inertia) | [![Lumilore](Lumilore.png)](Lumilore) | [![Riftmaker](Riftmaker.png)](Riftmaker) | [![Rippletide](Rippletide.png)](Rippletide) |
+> | **[Inertia](Inertia)** | **[Lumilore](Lumilore)** | **[Riftmaker](Riftmaker)** | **[Rippletide](Rippletide)** |
+> | [![Soul Weaver](SoulWeaver.png)](SoulWeaver) | [![Source](Source_Icon.png)](Source) | | |
+> | **[Soul Weaver](SoulWeaver)** | **[Source](Source)** | | |
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Artifacts/AllArtifacts.md)
