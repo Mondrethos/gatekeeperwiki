@@ -1297,10 +1297,14 @@ body[data-slug="Artifacts/AllArtifacts"] td img {
 
 /* All Monsters Page Styling */
 
-[data-page-title="All Monsters"] img {
+[data-slug="Monsters/AllMonsters"] img {
   margin: 0;
 }
 
-[data-page-title="All Monsters"] table td a.internal {
-  background-color: transparent !important;
+[data-slug="Monsters/AllMonsters"] a.internal img {
+  background-color: transparent;
+}
+
+[data-slug="Monsters/AllMonsters"] a.internal {
+  background-color: transparent;
 }
