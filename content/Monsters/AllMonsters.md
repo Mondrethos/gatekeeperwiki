@@ -5,28 +5,38 @@ enableToc: false
 
 > [!monsterbase]+ Base Types
 > # Base Monsters
-> | [![CrystalGuard](CrystalGuard_Icon.png)<br>**Crystal Guard**](CrystalGuard) | [![Deadrunner](Deadrunner_Icon.png)<br>**Deadrunner**](Deadrunner) | [![Doomed](Doomed_Icon.png)<br>**Doomed**](Doomed) | [![Drought](Drought_Enemy_Icon.png)<br>**Drought**](Drought) |
+> | [![CrystalGuard](CrystalGuard_Icon.png)](CrystalGuard) | [![Deadrunner](Deadrunner_Icon.png)](Deadrunner) | [![Doomed](Doomed_Icon.png)](Doomed) | [![Drought](Drought_Enemy_Icon.png)](Drought) |
 > |:---:|:---:|:---:|:---:|
-> | [![Eidolon](Eidolon_Icon.png)<br>**Eidolon**](Eidolon) | [![FiendSkull](FiendSkull_Icon.png)<br>**Fiend Skull**](FiendSkull) | [![Galescream](Galescream_Enemy_Icon.png)<br>**Galescream**](Galescream) | [![Grenadier](Grenadier_Icon.png)<br>**Grenadier**](Grenadier) |
-> | [![Grouch](Grouch_Icon.png)<br>**Grouch**](Grouch) | [![Heartless](Heartless_Icon.png)<br>**Heartless**](Heartless) | [![Hermit](Hermit_Icon.png)<br>**Hermit**](Hermit) | [![Howler](Howler_Enemy_Icon.png)<br>**Howler**](Howler) |
-> | [![Idol](Idol_Icon.png)<br>**Idol**](Idol) | [![Kinetic](Kinetic_Icon.png)<br>**Kinetic**](Kinetic) | [![Maluard](Maluard_Icon.png)<br>**Maluard**](Maluard) | [![Mount](Mount_Icon.png)<br>**Mount**](Mount) |
-> | [![Rattle](Rattle_Enemy_Icon.png)<br>**Rattle**](Rattle) | [![Sentry](Sentry_Icon.png)<br>**Sentry**](Sentry) | [![Thorn](Thorn_Enemy_Icon.png)<br>**Thorn**](Thorn) | [![Toxic](Toxic_Enemy_Icon.png)<br>**Toxic**](Toxic) |
-> | [![Vice](Vice_Icon.png)<br>**Vice**](Vice) | [![Wanderer](Wanderer_Enemy_Icon.png)<br>**Wanderer**](Wanderer) | [![WingsHerald](Wind_sHerald_Icon.png)<br>**Wind's Herald**](WingsHerald) |  |
+> | **[CrystalGuard](CrystalGuard)** | **[Deadrunner](Deadrunner)** | **[Doomed](Doomed)** | **[Drought](Drought)** |
+> | [![Eidolon](Eidolon_Icon.png)](Eidolon) | [![FiendSkull](FiendSkull_Icon.png)](FiendSkull) | [![Galescream](Galescream_Enemy_Icon.png)](Galescream) | [![Grenadier](Grenadier_Icon.png)](Grenadier) |
+> | **[Eidolon](Eidolon)** | **[FiendSkull](FiendSkull)** | **[Galescream](Galescream)** | **[Grenadier](Grenadier)** |
+> | [![Grouch](Grouch_Icon.png)](Grouch) | [![Heartless](Heartless_Icon.png)](Heartless) | [![Hermit](Hermit_Icon.png)](Hermit) | [![Howler](Howler_Enemy_Icon.png)](Howler) |
+> | **[Grouch](Grouch)** | **[Heartless](Heartless)** | **[Hermit](Hermit)** | **[Howler](Howler)** |
+> | [![Idol](Idol_Icon.png)](Idol) | [![Kinetic](Kinetic_Icon.png)](Kinetic) | [![Maluard](Maluard_Icon.png)](Maluard) | [![Mount](Mount_Icon.png)](Mount) |
+> | **[Idol](Idol)** | **[Kinetic](Kinetic)** | **[Maluard](Maluard)** | **[Mount](Mount)** |
+> | [![Rattle](Rattle_Enemy_Icon.png)](Rattle) | [![Sentry](Sentry_Icon.png)](Sentry) | [![Thorn](Thorn_Enemy_Icon.png)](Thorn) | [![Toxic](Toxic_Enemy_Icon.png)](Toxic) |
+> | **[Rattle](Rattle)** | **[Sentry](Sentry)** | **[Thorn](Thorn)** | **[Toxic](Toxic)** |
+> | [![Vice](Vice_Icon.png)](Vice) | [![Wanderer](Wanderer_Enemy_Icon.png)](Wanderer) | [![WingsHerald](Wind_sHerald_Icon.png)](WingsHerald) | |
+> | **[Vice](Vice)** | **[Wanderer](Wanderer)** | **[WingsHerald](WingsHerald)** | |
 
 > [!monsterspawned]- Spawned Types
 > # Spawned Monsters
-> | [![ChildOfPalium](ChildOfPalium_Icon.png)<br>**Child of Palium**](ChildOfPalium) | [![Descendant](Descendant_Icon.png)<br>**Descendant**](Descendant) | [![Fragment](Fragment_Icon.png)<br>**Fragment**](Fragment) | [![KeepersMine](KeeperMine_Icon.png)<br>**Keeper's Mine**](KeepersMine) |
+> | [![ChildOfPalium](ChildOfPalium_Icon.png)](ChildOfPalium) | [![Descendant](Descendant_Icon.png)](Descendant) | [![Fragment](Fragment_Icon.png)](Fragment) | [![KeepersMine](KeeperMine_Icon.png)](KeepersMine) |
 > |:---:|:---:|:---:|:---:|
-> | [![RestlessSpirit](RestlessSpirit_Icon.png)<br>**Restless Spirit**](RestlessSpirit) | [![Tombstone](Gravestone_Icon.png)<br>**Tombstone**](Tombstone) |  |  |
+> | **[ChildOfPalium](ChildOfPalium)** | **[Descendant](Descendant)** | **[Fragment](Fragment)** | **[KeepersMine](KeepersMine)** |
+> | [![RestlessSpirit](RestlessSpirit_Icon.png)](RestlessSpirit) | [![Tombstone](Gravestone_Icon.png)](Tombstone) | | |
+> | **[RestlessSpirit](RestlessSpirit)** | **[Tombstone](Tombstone)** | | |
 
 > [!monsterrampant]- Rampant Types
 > # Rampant Monsters
-> | [![DamnedSpellcaster](DamnedSpellcaster_Icon.png)<br>**Damned Spellcaster**](DamnedSpellcaster) | [![Initiator](Initiator_Icon.png)<br>**Initiator**](Initiator) | [![LucidEthel](LucidEthel_Icon.png)<br>**Lucid Ethel**](LucidEthel) | [![Quake](Quake_Enemy_Icon.png)<br>**Quake**](Quake) |
+> | [![DamnedSpellcaster](DamnedSpellcaster_Icon.png)](DamnedSpellcaster) | [![Initiator](Initiator_Icon.png)](Initiator) | [![LucidEthel](LucidEthel_Icon.png)](LucidEthel) | [![Quake](Quake_Enemy_Icon.png)](Quake) |
 > |:---:|:---:|:---:|:---:|
+> | **[DamnedSpellcaster](DamnedSpellcaster)** | **[Initiator](Initiator)** | **[LucidEthel](LucidEthel)** | **[Quake](Quake)** |
 
 > [!monstersiren]- Siren Types
 > # Siren Monsters
-> | [![Collector](Collector_Siren_Icon.png)<br>**Collector**](Collector) | [![Colossus](Colossus_Siren_Icon.png)<br>**Colossus**](Colossus) | [![Prince](Prince_Icon.png)<br>**Prince**](Prince) | [![Quantum](Quantum_Siren_Icon.png)<br>**Quantum**](Quantum) | [![Tarra](Tarra_Icon.png)<br>**Tarra**](Tarra) |
+> | [![Collector](Collector_Siren_Icon.png)](Collector) | [![Colossus](Colossus_Siren_Icon.png)](Colossus) | [![Prince](Prince_Icon.png)](Prince) | [![Quantum](Quantum_Siren_Icon.png)](Quantum) | [![Tarra](Tarra_Icon.png)](Tarra) |
 > |:---:|:---:|:---:|:---:|:---:|
+> | **[Collector](Collector)** | **[Colossus](Colossus)** | **[Prince](Prince)** | **[Quantum](Quantum)** | **[Tarra](Tarra)** |
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/AllMonsters.md)
