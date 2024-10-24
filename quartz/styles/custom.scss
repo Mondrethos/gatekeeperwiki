@@ -1291,11 +1291,22 @@ img[alt~="border"],
 }
 
 /* All Artifacts IMG Size in Table */
+
 body[data-slug="Artifacts/AllArtifacts"] td img {
   max-width: 65% !important;
 }
 
 body[data-slug="Artifacts/AllArtifacts"] th img {
+  max-width: 65% !important;
+}
+
+/* All Monsters IMG Size in Table */
+
+body[data-slug="Monsters/AllMonsters"] td img {
+  max-width: 65% !important;
+}
+
+body[data-slug="Monsters/AllMonsters"] th img {
   max-width: 65% !important;
 }
 
