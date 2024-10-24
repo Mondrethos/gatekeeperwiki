@@ -15,4 +15,4 @@ As yet an unintelligent cocoon, instinctively protecting Tarra.
 > 
 > Destroyed in one hit.
 
---- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/ChildOfPalium.md)
+--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/ChildofPalium.md)
