@@ -21,9 +21,9 @@ enableToc: false
 
 > [!monsterspawned]- Spawned Types
 > # Spawned Monsters
-> | [![ChildOfPalium](ChildOfPalium_Icon.png)](ChildOfPalium) | [![Descendant](Descendant_Icon.png)](Descendant) | [![Fragment](Fragment_Icon.png)](Fragment) | [![KeepersMine](KeeperMine_Icon.png)](KeepersMine) |
+> | [![ChildofPalium](ChildOfPalium_Icon.png)](ChildofPalium) | [![Descendant](Descendant_Icon.png)](Descendant) | [![Fragment](Fragment_Icon.png)](Fragment) | [![KeepersMine](KeeperMine_Icon.png)](KeepersMine) |
 > |:---:|:---:|:---:|:---:|
-> | [**ChildOfPalium**](ChildOfPalium) | [**Descendant**](Descendant) | [**Fragment**](Fragment) | [**KeepersMine**](KeepersMine) |
+> | [**ChildofPalium**](ChildofPalium) | [**Descendant**](Descendant) | [**Fragment**](Fragment) | [**KeepersMine**](KeepersMine) |
 > | [![RestlessSpirit](RestlessSpirit_Icon.png)](RestlessSpirit) | [![Tombstone](Gravestone_Icon.png)](Tombstone) |  |  |
 > | [**RestlessSpirit**](RestlessSpirit) | [**Tombstone**](Tombstone) |  |  |
 
