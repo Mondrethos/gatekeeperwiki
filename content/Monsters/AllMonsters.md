@@ -16,8 +16,8 @@ enableToc: false
 > | [**Idol**](Idol) | [**Kinetic**](Kinetic) | [**Maluard**](Maluard) | [**Mount**](Mount) |
 > | [![Rattle](Rattle_Enemy_Icon.png)](Rattle) | [![Sentry](Sentry_Icon.png)](Sentry) | [![Thorn](Thorn_Enemy_Icon.png)](Thorn) | [![Toxic](Toxic_Enemy_Icon.png)](Toxic) |
 > | [**Rattle**](Rattle) | [**Sentry**](Sentry) | [**Thorn**](Thorn) | [**Toxic**](Toxic) |
-> | [![Vice](Vice_Icon.png)](Vice) | [![Wanderer](Wanderer_Enemy_Icon.png)](Wanderer) | [![WingsHerald](Wind_sHerald_Icon.png)](WingsHerald) |  |
-> | [**Vice**](Vice) | [**Wanderer**](Wanderer) | [**WingsHerald**](WingsHerald) |  |
+> | [![Vice](Vice_Icon.png)](Vice) | [![Wanderer](Wanderer_Enemy_Icon.png)](Wanderer) | [![WindsHerald](Wind_sHerald_Icon.png)](WindsHerald) |  |
+> | [**Vice**](Vice) | [**Wanderer**](Wanderer) | [**WindsHerald**](WindsHerald) |  |
 
 > [!monsterspawned]- Spawned Types
 > # Spawned Monsters
