@@ -1337,3 +1337,66 @@ body[data-slug="Monsters/AllMonsters"] th img {
 [data-slug="Artifacts/AllArtifacts"] a.internal {
   background-color: transparent;
 }
+
+
+/* Target the base table */
+.table-container table {
+  border-collapse: separate;
+  border-spacing: 0 20px;
+}
+
+/* Remove the top border issue */
+.callout.monsterbase {
+  border-top: none;
+}
+
+/* Style each monster cell as a card */
+.table-container td {
+  padding: 15px;
+  position: relative;
+  background: rgba(26, 31, 46, 0.3);
+}
+
+/* Connect image to text with background */
+.table-container tr:nth-child(odd) td {
+  border-bottom: none;
+  padding-bottom: 5px;
+}
+
+.table-container tr:nth-child(even) td {
+  border-top: none;
+  padding-top: 5px;
+}
+
+/* Create visual container for each monster */
+.table-container tr:nth-child(odd) td,
+.table-container tr:nth-child(even) td {
+  position: relative;
+}
+
+.table-container tr:nth-child(odd) td::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: rgba(170, 183, 205, 0.1);
+}
+
+/* Center content */
+.table-container td[style="text-align:center;"] {
+  vertical-align: middle;
+}
+
+/* Image sizing */
+.table-container img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* Hover effect for the entire monster section */
+.table-container tr:nth-child(odd) td:hover,
+.table-container tr:nth-child(even) td:hover {
+  background: rgba(26, 31, 46, 0.5);
+}
