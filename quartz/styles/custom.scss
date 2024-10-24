@@ -1294,3 +1294,17 @@ img[alt~="border"],
 body[data-slug="Artifacts/AllArtifacts"] td img {
   max-width: 65% !important;
 }
+
+/* All Monsters Page Styling */
+
+[data-page-title="All Monsters"] img {
+  margin: 0;
+}
+
+[data-page-title="All Monsters"] a.internal img {
+  background-color: transparent;
+}
+
+[data-page-title="All Monsters"] a.internal {
+  background-color: transparent;
+}
