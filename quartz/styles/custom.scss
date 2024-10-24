@@ -1295,16 +1295,16 @@ body[data-slug="Artifacts/AllArtifacts"] td img {
   max-width: 65% !important;
 }
 
-/* All Monsters Page Styling */
+/* All Artifacts & All Monsters Page Styling */
 
-[data-slug="Monsters/AllMonsters"] img {
+[data-slug="Artifacts/AllArtifacts"],[data-slug="Monsters/AllMonsters"] img {
   margin: 0;
 }
 
-[data-slug="Monsters/AllMonsters"] a.internal img {
+[data-slug="Artifacts/AllArtifacts"],[data-slug="Monsters/AllMonsters"] a.internal img {
   background-color: transparent;
 }
 
-[data-slug="Monsters/AllMonsters"] a.internal {
+[data-slug="Artifacts/AllArtifacts"], [data-slug="Monsters/AllMonsters"] a.internal {
   background-color: transparent;
 }
