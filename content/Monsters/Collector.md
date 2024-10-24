@@ -12,6 +12,7 @@ Collector is a unique phenomenon of Purgatory-17, formed from a bunch of embitte
 
 > [!note] Base Stats
 > Base health level: 8500
+> 
 > Base damage: 50
 
 > [!note] Abilities

@@ -12,6 +12,7 @@ The only inhabitants of Celestium capable of self-reproduction. Wind's Heralds a
 
 > [!note] Base Stats
 > Base health level: 180
+> 
 > Base damage: 14
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/WindsHerald.md)

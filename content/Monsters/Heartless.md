@@ -12,6 +12,7 @@ Little is known about the Heartless. They were created not for defense, but for 
 
 > [!note] Base Stats
 > Base health level: 450
+> 
 > Base damage: 20
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Heartless.md)

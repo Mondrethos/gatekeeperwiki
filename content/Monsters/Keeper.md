@@ -12,6 +12,7 @@ A sentinel unit with primitive intelligence. Does not pose a threat on its own, 
 
 > [!note] Base Stats
 > Base health level: 300
+> 
 > Base damage: 16
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Keeper.md)

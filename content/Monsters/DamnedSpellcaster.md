@@ -12,6 +12,7 @@ A former spirit who voluntarily became a warden. Distributes souls between the s
 
 > [!note] Base Stats
 > Base health level: 1800
+> 
 > Base damage: 20
 
 > [!note] Abilities

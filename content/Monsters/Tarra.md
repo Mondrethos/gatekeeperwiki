@@ -12,6 +12,7 @@ Tarra is the mistress of Palium and a hound that brings disaster. Tarra is one o
 
 > [!note] Base Stats
 > Base health level: 7000
+> 
 > Base damage: 60
 
 > [!note] Abilities

@@ -12,6 +12,7 @@ These are magical beings created from the minerals of the "Blue Beast" comet. As
 
 > [!note] Base Stats
 > Base health level: 440
+> 
 > Base damage: 18
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/CrystalGuard.md)

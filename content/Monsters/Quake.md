@@ -12,6 +12,7 @@ An ancient mechanoid that has outlived hundreds of generations of Aridune's inha
 
 > [!note] Base Stats
 > Base health level: 3500
+> 
 > Base damage: 25
 
 > [!note] Abilities

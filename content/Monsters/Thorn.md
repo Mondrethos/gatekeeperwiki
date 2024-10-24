@@ -12,6 +12,7 @@ Brought up for aggression towards outsiders, these fighting pets are trusted com
 
 > [!note] Base Stats
 > Base health level: 350
+> 
 > Base damage: 18
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Thorn.md)

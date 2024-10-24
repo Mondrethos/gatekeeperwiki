@@ -12,6 +12,7 @@ Guardians of the Aurora Gate. The Sentry is quite savvy and experienced in comba
 
 > [!note] Base Stats
 > Base health level: 400
+> 
 > Base damage: 25
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Sentry.md)

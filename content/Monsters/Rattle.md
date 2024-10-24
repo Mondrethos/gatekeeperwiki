@@ -12,6 +12,7 @@ The main labor force of the nomadic tribes of Aridune, predominantly engaged in 
 
 > [!note] Base Stats
 > Base health level: 280
+> 
 > Base damage: 14
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Rattle.md)

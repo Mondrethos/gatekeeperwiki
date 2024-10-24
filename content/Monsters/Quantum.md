@@ -12,6 +12,7 @@ Guardian of Celestium and one of the three hermit mages of Delta.
 
 > [!note] Base Stats
 > Base health level: 7000
+> 
 > Base damage: 50
 
 > [!note] Abilities

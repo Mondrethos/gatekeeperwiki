@@ -12,6 +12,7 @@ The Siren Prince of the Aurora planet. Became the ruler as a result of a war tha
 
 > [!note] Base Stats
 > Base health level: 6000
+> 
 > Base damage: 50
 
 > [!note] Abilities

@@ -12,6 +12,7 @@ Created in the image of one of the hermit mages. Idols are living statues, guard
 
 > [!note] Base Stats
 > Base health level: 450
+> 
 > Base damage: 20
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Idol.md)

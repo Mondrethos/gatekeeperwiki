@@ -12,6 +12,7 @@ An artificially created breed of spiders with enchanted stones instead of heads.
 
 > [!note] Base Stats
 > Base health level: 440
+> 
 > Base damage: 30
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Howler.md)

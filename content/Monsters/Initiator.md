@@ -12,6 +12,7 @@ The Supreme Guardian of Celestium. It represents the culmination of the hermit m
 
 > [!note] Base Stats
 > Base health level: 2500
+> 
 > Base damage: 50
 
 > [!note] Abilities

@@ -12,6 +12,7 @@ These are the embodiment of great warriors from this part of the Universe, anima
 
 > [!note] Base Stats
 > Base health level: 600
+> 
 > Base damage: 25
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Maluard.md)

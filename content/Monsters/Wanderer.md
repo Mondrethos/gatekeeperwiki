@@ -12,6 +12,7 @@ Banished from Celestium, the Wanderers settled on Aridune under the protection o
 
 > [!note] Base Stats
 > Base health level: 800
+> 
 > Base damage: 25
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/Wanderer.md)

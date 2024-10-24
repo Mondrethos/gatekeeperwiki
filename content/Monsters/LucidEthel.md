@@ -12,6 +12,7 @@ The Prince's personal servant. Has many bodies and exists in all of them simulta
 
 > [!note] Base Stats
 > Base health level: 1800
+> 
 > Base damage: 35
 
 > [!note] Abilities

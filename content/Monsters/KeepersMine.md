@@ -12,6 +12,7 @@ A primitive mechanism that physically aims at its target and releases spikes clo
 
 > [!note] Base Stats
 > Base damage: 16
+> 
 > Destroyed in one hit.
 
 --- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/Monsters/KeepersMine.md)
