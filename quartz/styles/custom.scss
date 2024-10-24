@@ -1297,14 +1297,14 @@ body[data-slug="Artifacts/AllArtifacts"] td img {
 
 /* All Artifacts & All Monsters Page Styling */
 
-[data-slug="Artifacts/AllArtifacts"], [data-slug="Monsters/AllMonsters"] img {
+[data-slug="Monsters/AllMonsters"] img {
   margin: 0;
 }
 
-[data-slug="Artifacts/AllArtifacts"], [data-slug="Monsters/AllMonsters"] a.internal img {
+[data-slug="Monsters/AllMonsters"] a.internal img {
   background-color: transparent;
 }
 
-[data-slug="Artifacts/AllArtifacts"], [data-slug="Monsters/AllMonsters"] a.internal {
+[data-slug="Monsters/AllMonsters"] a.internal {
   background-color: transparent;
 }
