@@ -1301,10 +1301,6 @@ body[data-slug="Artifacts/AllArtifacts"] td img {
   margin: 0;
 }
 
-[data-page-title="All Monsters"] a.internal img {
-  background-color: transparent;
-}
-
 [data-page-title="All Monsters"] a.internal {
-  background-color: transparent;
+  background-color: transparent !important;
 }
