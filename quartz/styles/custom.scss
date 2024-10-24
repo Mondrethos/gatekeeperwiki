@@ -1290,6 +1290,14 @@ img[alt~="border"],
   object-fit: contain;
 }
 
+/* All Artifacts IMG Size in Table */
+body[data-slug="Artifacts/AllArtifacts"] td img {
+  max-width: 65% !important;
+}
+
+body[data-slug="Artifacts/AllArtifacts"] th img {
+  max-width: 65% !important;
+}
 
 /* All Monsters Page Styling */
 
