@@ -32,6 +32,7 @@ jobs:
         pip install feedparser
 
     - name: Fetch Steam RSS feed
+      id: fetch-feed  # Added ID to reference outputs
       shell: python
       run: |
         import feedparser
@@ -107,6 +108,13 @@ jobs:
             
             print(f"{'Created' if is_new_file else 'Updated'} file: {file_name}")
 
+        # Set outputs for use in PR creation
+        with open(os.environ['GITHUB_ENV'], 'a') as f:
+            f.write(f'NEW_FILES_COUNT={len(new_files)}\n')
+            f.write(f'UPDATED_FILES_COUNT={len(updated_files)}\n')
+            f.write(f'NEW_FILES={",".join(new_files)}\n')
+            f.write(f'UPDATED_FILES={",".join(updated_files)}\n')
+
         # Write change summary
         summary = {
             'has_changes': bool(new_files or updated_files),
@@ -121,20 +129,12 @@ jobs:
         with open('change_summary.json', 'w') as f:
             json.dump(summary, f)
 
-        # Signal if we have changes (but don't error if we don't)
-        if not new_files and not updated_files:
-            print("No changes detected, skipping PR creation")
-            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-                f.write('has_changes=false\n')
-            exit(0)  # Clean exit
-        else:
-            print(f"Changes detected: {len(new_files)} new files, {len(updated_files)} updated files")
-            with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-                f.write('has_changes=true\n')
-            exit(0)  # Clean exit
+        # Set the has_changes output
+        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+            f.write(f'has_changes={str(bool(new_files or updated_files)).lower()}\n')
 
     - name: Create Pull Request
-      if: ${{ success() && steps.fetch-feed.outputs.has_changes == 'true' }}
+      if: steps.fetch-feed.outputs.has_changes == 'true'
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.PAT }}
@@ -144,8 +144,14 @@ jobs:
           Automated PR for new Steam updates
           
           Changes in this PR:
-          - New files: ${{ env.new_files }}
-          - Updated files: ${{ env.updated_files }}
+          - New files: ${{ env.NEW_FILES_COUNT }}
+          - Updated files: ${{ env.UPDATED_FILES_COUNT }}
+          
+          New files:
+          ${{ env.NEW_FILES }}
+          
+          Updated files:
+          ${{ env.UPDATED_FILES }}
           
           This PR was automatically generated to add new Steam updates to the wiki.
         branch: steam-updates
