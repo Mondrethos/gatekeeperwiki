@@ -173,7 +173,7 @@ enableToc: true
 # Pyromancer
 - Ignite more than 20 enemies at once.
 >[!tip]-
->This is easiest in arena with either Hybrid or Mediator. Level up either of their secondary skills and if you get an item that gives you an extra charge of said skill, that's even better.
+>This is easiest in arena with either Hybrid, Mediator, or Nidum(this gatekeeper might be the easist due to their ability penetrating multiple targets). Level up either of their secondary skills and if you get an item that gives you an extra charge of said skill, that's even better.
 
 >[!note]- Unlocks  
 >
