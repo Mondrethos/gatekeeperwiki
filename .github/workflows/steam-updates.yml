@@ -1,165 +1,208 @@
-name: Steam Updates
+name: Steam RSS Feed Processor
 
 on:
   schedule:
-    - cron: '0 * * * *'  # Run every hour
-  workflow_dispatch:      # Allows manual trigger
+    - cron: '15 */1 * * *'  # Every hour at 15 minutes past (avoiding congestion)
+  workflow_dispatch:
+    inputs:
+      force_update:
+        description: 'Force update even if no changes detected'
+        type: boolean
+        default: false
+      log_level:
+        description: 'Logging level'
+        type: choice
+        options: ['INFO', 'DEBUG', 'WARNING']
+        default: 'INFO'
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: false  # Don't cancel scheduled runs
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+env:
+  PYTHON_VERSION: '3.11'
+  STEAM_RSS_URL: 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
+  CONTENT_DIR: 'content/PatchNotes'
+  LOG_LEVEL: ${{ inputs.log_level || 'INFO' }}
 
 jobs:
-  update_wiki:
-    runs-on: ubuntu-latest
+  steam-rss-processor:
+    runs-on: ubuntu-22.04  # Pinned OS version
+    timeout-minutes: 30
+    environment: production
 
     steps:
-    - name: Configure Git
-      run: |
-        git config --global user.name "GitHub Action"
-        git config --global user.email "action@github.com"
-        
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        token: ${{ secrets.PAT }}
-        fetch-depth: 0
+      - name: Checkout repository
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11  # v4.1.1 pinned to SHA
+        with:
+          fetch-depth: 2  # Needed for change detection
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: '3.x'
+      - name: Setup Python with caching
+        uses: actions/setup-node@60edb5dd545a775178f52524783378180af0d1f8  # v4.0.0 pinned to SHA
+        uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236  # v4.7.1 pinned to SHA
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: 'pip'
+          cache-dependency-path: |
+            requirements.txt
+            requirements-dev.txt
 
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install feedparser
+      - name: Cache application data
+        uses: actions/cache@13aacd865c20de90d75de3b17ebe84f7a17d57d2  # v4.0.0 pinned to SHA
+        with:
+          path: |
+            ~/.cache/steam-rss
+            content_hashes.json
+            circuit_breaker_state.json
+          key: ${{ runner.os }}-steam-rss-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-steam-rss-
 
-    - name: Fetch Steam RSS feed
-      id: fetch-feed
-      run: |
-        python3 - <<'EOF'
-        import feedparser
-        import os
-        from datetime import datetime
-        import re
-        import json
+      - name: Install dependencies with retry
+        uses: nick-fields/retry@14672906e672a08bd6eeb15720e9ed3ce869cdd4  # v2.9.0 pinned to SHA
+        with:
+          timeout_minutes: 5
+          max_attempts: 3
+          command: |
+            python -m pip install --upgrade pip
+            pip install -r requirements.txt
 
-        def sanitize_filename(filename):
-            return re.sub(r'[<>:"/\\|?*]', '', filename)
+      - name: Validate environment and connectivity
+        run: |
+          echo "::group::Environment Validation"
+          python --version
+          pip list
+          echo "::endgroup::"
 
-        def parse_date(date_string):
-            try:
-                return datetime.strptime(date_string, '%a, %d %b %Y %H:%M:%S %z')
-            except ValueError:
-                try:
-                    return datetime.strptime(date_string.split('+')[0].strip(), '%a, %d %b %Y %H:%M:%S')
-                except ValueError:
-                    print(f"Warning: Could not parse date '{date_string}', using current time")
-                    return datetime.now()
+          echo "::group::Connectivity Check"
+          # Test basic connectivity with retry
+          python -c "
+          import requests
+          import sys
+          try:
+              response = requests.get('${{ env.STEAM_RSS_URL }}', timeout=10)
+              print(f'Steam RSS connectivity: {response.status_code}')
+              if response.status_code != 200:
+                  sys.exit(1)
+          except Exception as e:
+              print(f'Connectivity error: {e}')
+              sys.exit(1)
+          "
+          echo "::endgroup::"
 
-        def normalize_content(content):
-            """Normalize content by standardizing line endings and removing trailing whitespace"""
-            return '\n'.join(line.rstrip() for line in content.splitlines()).strip()
+      - name: Process Steam RSS feed
+        id: process_feed
+        env:
+          FORCE_UPDATE: ${{ inputs.force_update || 'false' }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          echo "::group::RSS Feed Processing"
+          python steam_rss_processor.py \
+            --url "${{ env.STEAM_RSS_URL }}" \
+            --output-dir "${{ env.CONTENT_DIR }}" \
+            --log-level "${{ env.LOG_LEVEL }}" \
+            --force-update "${{ env.FORCE_UPDATE }}"
+          echo "::endgroup::"
 
-        # Track changes
-        new_files = []
-        updated_files = []
+      - name: Validate generated content
+        run: |
+          echo "::group::Content Validation"
+          python validate_content.py --content-dir "${{ env.CONTENT_DIR }}"
+          echo "::endgroup::"
 
-        feed_url = 'https://store.steampowered.com/feeds/news/app/2106670/?cc=US&l=english&snr=1_2108_9__2107'
-        feed = feedparser.parse(feed_url)
+      - name: Check for changes
+        id: changes
+        run: |
+          # Advanced change detection
+          python -c "
+          import subprocess
+          import json
 
-        os.makedirs('content/PatchNotes', exist_ok=True)
+          # Check git status
+          result = subprocess.run(['git', 'status', '--porcelain'],
+                                capture_output=True, text=True)
+          has_changes = bool(result.stdout.strip())
 
-        for entry in feed.entries:
-            title = entry.title
-            description = entry.description
-            date_str = parse_date(entry.published)
-            
-            safe_title = sanitize_filename(title)
-            file_name = f"content/PatchNotes/{safe_title}.md"
-            
-            # Check if file already exists
-            is_new_file = not os.path.exists(file_name)
-            
-            # Build the frontmatter
-            frontmatter = "---\n"
-            frontmatter += f"link: '{entry.link}'\n"
-            frontmatter += "author: 'Steam'\n"
-            frontmatter += f"date: '{date_str.strftime('%Y-%m-%dT%H:%M:%S')}'\n"
-            frontmatter += "tags: ['patch-notes']\n"
-            frontmatter += "---\n\n"
-            
-            content = f"# {title}\n\n{description}\n\nPublished on: {entry.published}"
-            file_content = normalize_content(frontmatter + content)
+          # Check processing results
+          try:
+              with open('processing_results.json', 'r') as f:
+                  results = json.load(f)
+              new_entries = results.get('new_entries', 0)
+              updated_entries = results.get('updated_entries', 0)
+          except FileNotFoundError:
+              new_entries = updated_entries = 0
 
-            # If file exists, check if content is different
-            if not is_new_file:
-                try:
-                    with open(file_name, 'r', encoding='utf-8') as f:
-                        existing_content = normalize_content(f.read())
-                    if existing_content == file_content:
-                        print(f"Skipping {file_name} - content unchanged")
-                        continue  # Skip if content hasn't changed
-                    print(f"Content different for {file_name}")
-                    print("Existing content hash:", hash(existing_content))
-                    print("New content hash:", hash(file_content))
-                    updated_files.append(file_name)
-                except Exception as e:
-                    print(f"Error reading existing file: {e}")
-                    updated_files.append(file_name)
-            else:
-                new_files.append(file_name)
+          should_create_pr = (
+              has_changes or
+              new_entries > 0 or
+              updated_entries > 0 or
+              '${{ env.FORCE_UPDATE }}' == 'true'
+          )
 
-            # Write the file
-            with open(file_name, 'w', encoding='utf-8', newline='\n') as f:
-                f.write(file_content)
-            
-            print(f"{'Created' if is_new_file else 'Updated'} file: {file_name}")
+          print(f'changes={str(should_create_pr).lower()}')
+          print(f'new_entries={new_entries}')
+          print(f'updated_entries={updated_entries}')
+          " >> $GITHUB_OUTPUT
 
-        # Set outputs for use in PR creation
-        with open(os.environ['GITHUB_ENV'], 'a') as f:
-            f.write(f'NEW_FILES_COUNT={len(new_files)}\n')
-            f.write(f'UPDATED_FILES_COUNT={len(updated_files)}\n')
-            f.write(f'NEW_FILES={",".join(new_files)}\n')
-            f.write(f'UPDATED_FILES={",".join(updated_files)}\n')
+      - name: Generate summary report
+        if: always()
+        run: |
+          echo "::group::Processing Summary"
+          python generate_summary.py
+          echo "::endgroup::"
 
-        # Write change summary
-        summary = {
-            'has_changes': bool(new_files or updated_files),
-            'new_files': len(new_files),
-            'updated_files': len(updated_files),
-            'files': {
-                'new': new_files,
-                'updated': updated_files
-            }
-        }
+      - name: Create Pull Request
+        if: steps.changes.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@70a41aba780001da0a30141984ae2a0c95d8704e  # v5.0.2 pinned to SHA
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: |
+            Update Steam RSS content - Run ${{ github.run_number }}
 
-        with open('change_summary.json', 'w') as f:
-            json.dump(summary, f)
+            - New entries: ${{ steps.changes.outputs.new_entries }}
+            - Updated entries: ${{ steps.changes.outputs.updated_entries }}
+            - Processed at: ${{ github.event.repository.updated_at }}
+          title: 'Steam RSS Update - ${{ github.run_number }}'
+          body-path: 'pr_summary.md'
+          branch: steam-rss-update/${{ github.run_number }}
+          delete-branch: true
+          labels: |
+            automated
+            content-update
+            steam-rss
+          reviewers: |
+            wiki-maintainers
 
-        # Set the has_changes output
-        with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
-            f.write(f'has_changes={str(bool(new_files or updated_files)).lower()}\n')
-        EOF
+      - name: Upload processing logs
+        if: always()
+        uses: actions/upload-artifact@65462800fd760344b1a7b4382951275a0abb4808  # v4.3.1 pinned to SHA
+        with:
+          name: processing-logs-${{ github.run_number }}
+          path: |
+            logs/
+            *.log
+            processing_results.json
+            content_validation.json
+          retention-days: 14
 
-    - name: Create Pull Request
-      if: steps.fetch-feed.outputs.has_changes == 'true'
-      uses: peter-evans/create-pull-request@v5
-      with:
-        token: ${{ secrets.PAT }}
-        commit-message: Add new Steam updates
-        title: 'feat: New Steam Updates'
-        body: |
-          Automated PR for new Steam updates
-          
-          Changes in this PR:
-          - New files: ${{ env.NEW_FILES_COUNT }}
-          - Updated files: ${{ env.UPDATED_FILES_COUNT }}
-          
-          New files:
-          ${{ env.NEW_FILES }}
-          
-          Updated files:
-          ${{ env.UPDATED_FILES }}
-          
-          This PR was automatically generated to add new Steam updates to the wiki.
-        branch: steam-updates
-        delete-branch: true
-        base: main
+      - name: Update monitoring dashboard
+        if: always()
+        env:
+          WEBHOOK_URL: ${{ secrets.MONITORING_WEBHOOK_URL }}
+        run: |
+          python update_monitoring.py \
+            --status "${{ job.status }}" \
+            --run-number "${{ github.run_number }}" \
+            --new-entries "${{ steps.changes.outputs.new_entries }}" \
+            --updated-entries "${{ steps.changes.outputs.updated_entries }}"
+
+      - name: Cleanup temporary files
+        if: always()
+        run: |
+          find . -name "*.tmp" -delete
+          find . -name "__pycache__" -type d -exec rm -rf {} + 2>/dev/null || true
