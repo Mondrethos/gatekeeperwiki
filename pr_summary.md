@@ -3,12 +3,12 @@
 This automated update processes the latest patch notes from the Gatekeeper Steam RSS feed.
 
 ### Changes
-- **New entries:** 10
+- **New entries:** 2
 - **Updated entries:** 0
 
 ### Processed at
 - **Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
-- **Run:** #6352
+- **Run:** #6370
 
 ### Files Changed
 ```
