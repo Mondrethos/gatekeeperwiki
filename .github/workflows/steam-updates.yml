@@ -39,35 +39,28 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 2 # Needed for change detection
+          fetch-depth: 0 # Full history for better change detection
 
-      - name: Setup Python with caching
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: ${{ env.PYTHON_VERSION }}
-          cache: "pip"
-
-      - name: Create requirements file if missing
-        run: |
-          if [ ! -f requirements.txt ]; then
-            echo "Creating requirements.txt..."
-            cat > requirements.txt << EOL
-          requests==2.31.0
-          beautifulsoup4==4.12.2
-          lxml==4.9.3
-          python-dateutil==2.8.2
-          pyyaml==6.0.1
-          EOL
-          fi
 
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install requests beautifulsoup4 lxml python-dateutil
 
-      - name: Create RSS processor script
+      - name: Create output directory
         run: |
-          cat > steam_rss_processor.py << 'EOL'
+          mkdir -p "${{ env.CONTENT_DIR }}"
+
+      - name: Create and run RSS processor
+        id: process_feed
+        env:
+          FORCE_UPDATE: ${{ inputs.force_update || 'false' }}
+        run: |
+          cat > process_steam_rss.py << 'EOF'
           import requests
           import xml.etree.ElementTree as ET
           from datetime import datetime
@@ -75,46 +68,74 @@ jobs:
           import sys
           import json
           import re
-          import argparse
           from pathlib import Path
           import hashlib
+          from email.utils import parsedate_to_datetime
 
           def sanitize_filename(title):
               """Convert title to valid filename"""
               # Remove special characters
               filename = re.sub(r'[<>:"/\\|?*]', '', title)
-              # Replace spaces with hyphens
+              # Replace spaces and multiple spaces with single hyphen
               filename = re.sub(r'\s+', '-', filename)
               # Remove multiple hyphens
               filename = re.sub(r'-+', '-', filename)
+              # Remove non-ASCII characters
+              filename = ''.join(c for c in filename if ord(c) < 128)
               # Trim and lowercase
               filename = filename.strip('-').lower()
               # Limit length
-              return filename[:50]
+              return filename[:50] if filename else 'untitled'
 
           def parse_date(date_str):
               """Parse RSS date format"""
               try:
-                  # RSS typically uses RFC 822 format
-                  from email.utils import parsedate_to_datetime
                   return parsedate_to_datetime(date_str)
               except:
                   return datetime.now()
 
           def extract_image_url(description):
-              """Extract image URL from description HTML"""
-              img_match = re.search(r'<img[^>]+src="([^"]+)"', description)
-              return img_match.group(1) if img_match else None
+              """Extract first image URL from description HTML"""
+              img_match = re.search(r'<img[^>]+src=["\']([^"\']+)["\']', description)
+              if img_match:
+                  url = img_match.group(1)
+                  # Handle relative URLs
+                  if url.startswith('//'):
+                      url = 'https:' + url
+                  return url
+              return None
 
           def clean_description(description):
               """Clean HTML from description"""
               # Remove image tags
-              description = re.sub(r'<img[^>]+>', '', description)
-              # Remove HTML tags
+              description = re.sub(r'<img[^>]*>', '', description)
+              # Convert <br> to newlines
+              description = re.sub(r'<br\s*/?>', '\n', description)
+              # Remove all other HTML tags
               description = re.sub(r'<[^>]+>', '', description)
+              # Decode HTML entities
+              description = description.replace('&amp;', '&')
+              description = description.replace('&lt;', '<')
+              description = description.replace('&gt;', '>')
+              description = description.replace('&quot;', '"')
+              description = description.replace('&#39;', "'")
               # Clean up whitespace
-              description = re.sub(r'\s+', ' ', description).strip()
-              return description
+              description = re.sub(r'\n\s*\n', '\n\n', description)
+              return description.strip()
+
+          def download_image(url, output_path):
+              """Download image from URL"""
+              try:
+                  response = requests.get(url, timeout=30, headers={
+                      'User-Agent': 'Mozilla/5.0 (compatible; GatekeeperWikiBot/1.0)'
+                  })
+                  response.raise_for_status()
+                  with open(output_path, 'wb') as f:
+                      f.write(response.content)
+                  return True
+              except Exception as e:
+                  print(f"Failed to download image from {url}: {e}")
+                  return False
 
           def generate_markdown(entry, output_dir):
               """Generate markdown file for RSS entry"""
@@ -128,12 +149,23 @@ jobs:
               date_str = date_obj.strftime('%Y-%m-%d')
 
               # Create filename
-              filename = f"{date_str}-{sanitize_filename(title)}.md"
+              safe_title = sanitize_filename(title)
+              filename = f"{date_str}-{safe_title}.md"
               filepath = os.path.join(output_dir, filename)
 
               # Extract image and clean description
               image_url = extract_image_url(description)
               clean_desc = clean_description(description)
+
+              # Prepare image filename if image exists
+              image_filename = None
+              if image_url:
+                  image_filename = f"{safe_title}.png"
+                  image_path = os.path.join(output_dir, image_filename)
+                  if download_image(image_url, image_path):
+                      print(f"Downloaded image: {image_filename}")
+                  else:
+                      image_filename = None
 
               # Generate markdown content
               content = f"""---
@@ -147,29 +179,37 @@ jobs:
           > # {title}
           >"""
 
-              if image_url:
-                  # Download and save image
-                  img_filename = f"{sanitize_filename(title)}.png"
-                  content += f"\n> ![[{img_filename}]]"
+              if image_filename:
+                  content += f"\n> ![[{image_filename}]]"
 
               content += f"\n> **Published:** {date_obj.strftime('%B %d, %Y')}\n>"
-              content += f"\n> {clean_desc}\n"
+
+              # Add description with proper formatting
+              for line in clean_desc.split('\n'):
+                  if line.strip():
+                      content += f"\n> {line}"
+                  else:
+                      content += "\n>"
 
               if link:
-                  content += f"\n> [View on Steam]({link})\n"
+                  content += f"\n>\n> [View on Steam]({link})"
 
-              content += f"\n--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/{filename})"
+              content += f"\n\n--- [Edit on GitHub](https://github.com/Mondrethos/gatekeeperwiki/edit/main/content/PatchNotes/{filename})"
 
-              return filepath, content, image_url
+              return filepath, content, filename
 
-          def process_feed(url, output_dir, force_update=False):
-              """Process Steam RSS feed"""
-              results = {
-                  'new_entries': 0,
-                  'updated_entries': 0,
-                  'errors': [],
-                  'processed': []
-              }
+          def main():
+              url = os.environ.get('STEAM_RSS_URL', sys.argv[1] if len(sys.argv) > 1 else '')
+              output_dir = os.environ.get('CONTENT_DIR', 'content/PatchNotes')
+              force_update = os.environ.get('FORCE_UPDATE', 'false').lower() == 'true'
+
+              if not url:
+                  print("Error: No RSS URL provided")
+                  sys.exit(1)
+
+              print(f"Processing RSS feed: {url}")
+              print(f"Output directory: {output_dir}")
+              print(f"Force update: {force_update}")
 
               # Create output directory
               Path(output_dir).mkdir(parents=True, exist_ok=True)
@@ -177,50 +217,72 @@ jobs:
               # Load existing content hashes
               hash_file = 'content_hashes.json'
               existing_hashes = {}
-              if os.path.exists(hash_file):
-                  with open(hash_file, 'r') as f:
-                      existing_hashes = json.load(f)
+              if os.path.exists(hash_file) and not force_update:
+                  try:
+                      with open(hash_file, 'r') as f:
+                          existing_hashes = json.load(f)
+                  except:
+                      pass
+
+              results = {
+                  'new_entries': 0,
+                  'updated_entries': 0,
+                  'errors': [],
+                  'processed': []
+              }
 
               try:
                   # Fetch RSS feed
-                  response = requests.get(url, timeout=30)
+                  print("Fetching RSS feed...")
+                  response = requests.get(url, timeout=30, headers={
+                      'User-Agent': 'Mozilla/5.0 (compatible; GatekeeperWikiBot/1.0)'
+                  })
                   response.raise_for_status()
 
                   # Parse XML
+                  print("Parsing RSS feed...")
                   root = ET.fromstring(response.content)
 
                   # Find all items
                   items = root.findall('.//item')
+                  print(f"Found {len(items)} items in feed")
 
-                  for item in items:
+                  if not items:
+                      print("Warning: No items found in RSS feed")
+                      # Try alternate structure
+                      items = root.findall('.//{http://purl.org/rss/1.0/}item')
+                      print(f"Trying alternate structure, found {len(items)} items")
+
+                  for i, item in enumerate(items):
+                      print(f"\nProcessing item {i+1}/{len(items)}")
+
                       entry = {}
                       for child in item:
-                          entry[child.tag] = child.text
+                          tag = child.tag.split('}')[-1] if '}' in child.tag else child.tag
+                          entry[tag] = child.text
+
+                      if not entry.get('title'):
+                          print("Skipping item without title")
+                          continue
+
+                      print(f"Title: {entry.get('title', 'N/A')}")
 
                       # Generate content
-                      filepath, content, image_url = generate_markdown(entry, output_dir)
+                      filepath, content, filename = generate_markdown(entry, output_dir)
 
                       # Calculate content hash
                       content_hash = hashlib.md5(content.encode()).hexdigest()
 
                       # Check if content changed
-                      if filepath in existing_hashes and existing_hashes[filepath] == content_hash and not force_update:
+                      if filepath in existing_hashes and existing_hashes[filepath] == content_hash:
+                          print(f"Content unchanged, skipping: {filename}")
                           continue
-
-                      # Download image if needed
-                      if image_url:
-                          try:
-                              img_response = requests.get(image_url, timeout=30)
-                              img_filename = os.path.basename(filepath).replace('.md', '.png')
-                              img_path = os.path.join(output_dir, img_filename)
-                              with open(img_path, 'wb') as f:
-                                  f.write(img_response.content)
-                          except Exception as e:
-                              results['errors'].append(f"Failed to download image: {e}")
 
                       # Write markdown file
                       with open(filepath, 'w', encoding='utf-8') as f:
                           f.write(content)
+
+                      print(f"Written: {filename}")
 
                       # Update tracking
                       if filepath in existing_hashes:
@@ -229,108 +291,101 @@ jobs:
                           results['new_entries'] += 1
 
                       existing_hashes[filepath] = content_hash
-                      results['processed'].append(filepath)
+                      results['processed'].append(filename)
 
                   # Save updated hashes
                   with open(hash_file, 'w') as f:
                       json.dump(existing_hashes, f, indent=2)
 
               except Exception as e:
-                  results['errors'].append(f"Feed processing error: {e}")
+                  error_msg = f"Feed processing error: {str(e)}"
+                  print(f"Error: {error_msg}")
+                  results['errors'].append(error_msg)
 
               # Save results
               with open('processing_results.json', 'w') as f:
                   json.dump(results, f, indent=2)
 
-              return results
-
-          def main():
-              parser = argparse.ArgumentParser(description='Process Steam RSS feed')
-              parser.add_argument('--url', required=True, help='RSS feed URL')
-              parser.add_argument('--output-dir', required=True, help='Output directory')
-              parser.add_argument('--log-level', default='INFO', help='Log level')
-              parser.add_argument('--force-update', default='false', help='Force update')
-
-              args = parser.parse_args()
-
-              force_update = args.force_update.lower() == 'true'
-
-              print(f"Processing RSS feed: {args.url}")
-              print(f"Output directory: {args.output_dir}")
-              print(f"Force update: {force_update}")
-
-              results = process_feed(args.url, args.output_dir, force_update)
-
-              print(f"\nProcessing complete:")
+              # Print summary
+              print(f"\n{'='*50}")
+              print(f"Processing complete:")
               print(f"- New entries: {results['new_entries']}")
               print(f"- Updated entries: {results['updated_entries']}")
+              print(f"- Total processed: {len(results['processed'])}")
               print(f"- Errors: {len(results['errors'])}")
 
-              if results['errors']:
-                  print("\nErrors encountered:")
-                  for error in results['errors']:
-                      print(f"  - {error}")
+              if results['processed']:
+                  print(f"\nProcessed files:")
+                  for file in results['processed']:
+                      print(f"  - {file}")
 
-              # Exit with error if processing failed
+              # Set outputs for GitHub Actions
+              print(f"\n::set-output name=new_entries::{results['new_entries']}")
+              print(f"::set-output name=updated_entries::{results['updated_entries']}")
+              print(f"::set-output name=has_changes::{len(results['processed']) > 0}")
+
+              # Exit with error if processing failed completely
               if results['errors'] and not results['processed']:
                   sys.exit(1)
 
           if __name__ == '__main__':
               main()
-          EOL
+          EOF
 
-      - name: Process Steam RSS feed
-        id: process_feed
-        env:
-          FORCE_UPDATE: ${{ inputs.force_update || 'false' }}
-        run: |
-          python steam_rss_processor.py \
-            --url "${{ env.STEAM_RSS_URL }}" \
-            --output-dir "${{ env.CONTENT_DIR }}" \
-            --log-level "${{ env.LOG_LEVEL }}" \
-            --force-update "${{ env.FORCE_UPDATE }}"
+          # Run the processor
+          python process_steam_rss.py
 
       - name: Check for changes
         id: changes
         run: |
-          # Check git status
-          git add .
+          # Check if any files were added/modified in the content directory
+          git add "${{ env.CONTENT_DIR }}" content_hashes.json processing_results.json 2>/dev/null || true
+
           if git diff --staged --quiet; then
             echo "changes=false" >> $GITHUB_OUTPUT
             echo "No changes detected"
           else
             echo "changes=true" >> $GITHUB_OUTPUT
-            echo "Changes detected"
+            echo "Changes detected:"
+            git diff --staged --name-status
 
-            # Read processing results
+            # Read processing results if available
             if [ -f processing_results.json ]; then
-              NEW_ENTRIES=$(python -c "import json; print(json.load(open('processing_results.json'))['new_entries'])")
-              UPDATED_ENTRIES=$(python -c "import json; print(json.load(open('processing_results.json'))['updated_entries'])")
+              NEW_ENTRIES=$(python -c "import json; data=json.load(open('processing_results.json')); print(data.get('new_entries', 0))")
+              UPDATED_ENTRIES=$(python -c "import json; data=json.load(open('processing_results.json')); print(data.get('updated_entries', 0))")
               echo "new_entries=$NEW_ENTRIES" >> $GITHUB_OUTPUT
               echo "updated_entries=$UPDATED_ENTRIES" >> $GITHUB_OUTPUT
+            else
+              echo "new_entries=0" >> $GITHUB_OUTPUT
+              echo "updated_entries=0" >> $GITHUB_OUTPUT
             fi
           fi
 
       - name: Generate PR summary
         if: steps.changes.outputs.changes == 'true'
         run: |
-          cat > pr_summary.md << EOL
+          cat > pr_summary.md << 'EOL'
           ## Steam RSS Update Summary
 
-          This automated update processes the latest patch notes from the Steam RSS feed.
+          This automated update processes the latest patch notes from the Gatekeeper Steam RSS feed.
 
           ### Changes
-          - **New entries:** ${{ steps.changes.outputs.new_entries || 0 }}
-          - **Updated entries:** ${{ steps.changes.outputs.updated_entries || 0 }}
+          - **New entries:** ${{ steps.changes.outputs.new_entries }}
+          - **Updated entries:** ${{ steps.changes.outputs.updated_entries }}
 
           ### Processed at
           - **Date:** $(date -u +"%Y-%m-%d %H:%M:%S UTC")
           - **Run:** #${{ github.run_number }}
 
           ### Files Changed
-          \`\`\`
-          $(git diff --staged --name-only)
-          \`\`\`
+          ```
+          $(git diff --staged --name-only | head -20)
+          ```
+
+          ### Notes
+          - All patch notes are formatted according to the Gatekeeper wiki standards
+          - Images from Steam announcements are automatically downloaded and included
+          - Each entry includes a direct link back to the Steam announcement
 
           ---
           *This PR was automatically generated by the Steam RSS processor workflow.*
@@ -342,18 +397,19 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message: |
-            Update Steam RSS content - Run ${{ github.run_number }}
+            Update Steam patch notes - Run #${{ github.run_number }}
 
-            - New entries: ${{ steps.changes.outputs.new_entries || 0 }}
-            - Updated entries: ${{ steps.changes.outputs.updated_entries || 0 }}
-          title: "[Auto] Steam RSS Update - ${{ github.run_number }}"
+            - New entries: ${{ steps.changes.outputs.new_entries }}
+            - Updated entries: ${{ steps.changes.outputs.updated_entries }}
+          title: "[Auto] Steam Patch Notes Update - Run #${{ github.run_number }}"
           body-path: "pr_summary.md"
           branch: steam-rss-update/${{ github.run_number }}
           delete-branch: true
           labels: |
             automated
             content-update
-            steam-rss
+            patch-notes
+          base: main
 
       - name: Upload artifacts
         if: always()
@@ -364,4 +420,20 @@ jobs:
             processing_results.json
             content_hashes.json
             pr_summary.md
+            process_steam_rss.py
           retention-days: 7
+          if-no-files-found: ignore
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## Workflow Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          if [ -f processing_results.json ]; then
+            echo "### Processing Results" >> $GITHUB_STEP_SUMMARY
+            echo '```json' >> $GITHUB_STEP_SUMMARY
+            cat processing_results.json >> $GITHUB_STEP_SUMMARY
+            echo '```' >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No processing results found." >> $GITHUB_STEP_SUMMARY
+          fi
