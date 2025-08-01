@@ -1,17 +1,6 @@
 {
-  "new_entries": 10,
+  "new_entries": 0,
   "updated_entries": 0,
   "errors": [],
-  "processed": [
-    "2025-07-31-gatekeeper-releases-tomorrow!.md",
-    "2025-07-30-two-days-till-launch.md",
-    "2025-07-29-three-days-till-launch.md",
-    "2025-07-08-the-nowhere-throne-beta.md",
-    "2025-06-27-the-nowhere-throne-(devblog-#2).md",
-    "2025-06-14-the-nowhere-throne-(devblog-#1).md",
-    "2025-05-30-gatekeeper-1.0-launches-on-august-1,-2025!.md",
-    "2025-04-21-roadmap-update-&-new-character-teaser.md",
-    "2025-03-24-arena-update-v.0.9.1.0.md",
-    "2025-02-27-update-v.0.9.0.09-(hotfix).md"
-  ]
+  "processed": []
 }
