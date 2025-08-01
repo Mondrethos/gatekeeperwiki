@@ -431,7 +431,7 @@
 .callout {
   &[data-callout="spawned"] {
     --color: #000;
-    --border: #FFFFFF;  /* White from [Spawned] text */
+    --border: #ffffff; /* White from [Spawned] text */
     --bg: #222;
 
     width: 300px;
@@ -452,7 +452,7 @@
   &[data-callout="spawned"] .callout-title {
     font-size: 16px;
     font-weight: bold;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     padding: 5px;
     border-bottom: 1px solid var(--border);
     text-align: center;
@@ -494,7 +494,7 @@
 .callout {
   &[data-callout="base"] {
     --color: #000;
-    --border: #00FFFF;  /* Cyan from [Base] text */
+    --border: #00ffff; /* Cyan from [Base] text */
     --bg: #222;
 
     width: 300px;
@@ -515,7 +515,7 @@
   &[data-callout="base"] .callout-title {
     font-size: 16px;
     font-weight: bold;
-    background-color: #00FFFF;
+    background-color: #00ffff;
     padding: 5px;
     border-bottom: 1px solid var(--border);
     text-align: center;
@@ -557,7 +557,7 @@
 .callout {
   &[data-callout="rampant"] {
     --color: #000;
-    --border: #FFD700;  /* Gold from [Rampant] text */
+    --border: #ffd700; /* Gold from [Rampant] text */
     --bg: #222;
 
     width: 300px;
@@ -578,7 +578,7 @@
   &[data-callout="rampant"] .callout-title {
     font-size: 16px;
     font-weight: bold;
-    background-color: #FFD700;
+    background-color: #ffd700;
     padding: 5px;
     border-bottom: 1px solid var(--border);
     text-align: center;
@@ -620,7 +620,7 @@
 .callout {
   &[data-callout="siren"] {
     --color: #000;
-    --border: #FF0000;  /* Red from [Siren] text */
+    --border: #ff0000; /* Red from [Siren] text */
     --bg: #222;
 
     width: 300px;
@@ -641,12 +641,12 @@
   &[data-callout="siren"] .callout-title {
     font-size: 16px;
     font-weight: bold;
-    background-color: #FF0000;
+    background-color: #ff0000;
     padding: 5px;
     border-bottom: 1px solid var(--border);
     text-align: center;
     margin: -10px -10px 10px -10px;
-    color: #fff;  /* White text for better contrast on red */
+    color: #fff; /* White text for better contrast on red */
   }
 
   &[data-callout="siren"] .callout-content {
@@ -1336,4 +1336,10 @@ body[data-slug="Monsters/AllMonsters"] th img {
 
 [data-slug="Artifacts/AllArtifacts"] a.internal {
   background-color: transparent;
+}
+
+/* All Gatekeeprs Page Styling */
+
+[data-slug="Gatekeepers/AllGatekeepers"] img {
+  max-width: 15%;
 }
