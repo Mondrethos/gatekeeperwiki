@@ -31,27 +31,27 @@ Vita offered him the position of gatekeeper in the Temple of Time, in exchange f
 #### Passive: Hunter's Luck
 ![[Hunter's Luck.png|wtiny]]
 
-- **Effect**: Killing an enemy has a 3% of dropping a random Modifier.
+- **Effect**: Tech Hunter can locate artifact caches.
 
 #### Shotgun
 ![[Shotgun.png|wtiny]]
-- **Base**: Fires a shotgun shell at medium range. Each projectile deals 75% damage.
-- **Upgrade 1**: Each projectile causes bleeding.
+- **Base**: Fires a shotgun shell at medium range. Each projectile deals 85% damage.
+- **Upgrade 1**: Each projectile causes bleeding. Chance 15%
 - **Upgrade 2**: Projectile quantity +2.
 - **Upgrade 3**: Projectiles pierce enemies.
 
 #### Vacuum
 ![[Vacuum.png|wtiny]]
-- **Base**: Throws a grenade that pulls enemies in and deals 450% damage within a radius of 16 units.
-- **Upgrade 1**: Grenade explosion leaves a fire puddle.
-- **Upgrade 2**: +50% to damage for each enemy in range.
-- **Upgrade 3**: When you kill an enemy with a grenade, another one will fly out of them.
+- **Base**: Throws a grenade that pulls enemies in and deals 500% damage within a radius of 16 units.
+- **Upgrade 1**: The explosion leaves a fire puddle.
+- **Upgrade 2**: +50% to damage for each enemy in range. Radius 10
+- **Upgrade 3**: An enemy killed by the grenade releases another one.
 
 #### Trace
 ![[Trace.png|wtiny]]
 - **Base**: Leaves a trail to which returns when reused. Pushes enemies at the point of return.
 - **Upgrade 1**: After activating the Trace, attack speed is +100% for 5 seconds.
-- **Upgrade 2**: Creates a bomb when Return is activated. 150% damage within a radius of 6 units.
+- **Upgrade 2**: Creates a bomb when Return is activated. 700% damage within a radius of 6 units.
 - **Upgrade 3**: A shield that protects from one hit for 10 seconds after activating Trace.
 
 #### Onslaught
@@ -59,7 +59,7 @@ Vita offered him the position of gatekeeper in the Temple of Time, in exchange f
 - **Base**: After 2 seconds, orbital fire starts around the tagged enemy. 460% damage for each hit. 6 hits.
 - **Upgrade 1**: +2 hits.
 - **Upgrade 2**: Each hit leaves a fire puddle.
-- **Upgrade 3**: Hits stun enemies.
+- **Upgrade 3**: Stuns effected enemies. Stun Duration 1
 
 <!-- Make sure that the github edit button link is correct. This just means adding the parent and filename after the content folder in the URL -->
 
