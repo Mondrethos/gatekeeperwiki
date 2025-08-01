@@ -1,0 +1,12 @@
+---
+link: 'https://store.steampowered.com/news/app/2106670/view/544490453586673725'
+author: 'Steam'
+date: '2025-07-31T15:12:32'
+tags: ['patch-notes']
+---
+
+# Gatekeeper Releases Tomorrow!
+
+<p class="bb_paragraph">Hey Gatekeepers, </p><div class="bb_h3">Only 1 day left — Gatekeeper launches tomorrow, on August 1st! </div><div class="bb_h3"></div><p class="bb_paragraph">To wrap up our pre-release character highlights, we’re excited to introduce our next Gatekeeper:</p><p class="bb_paragraph"></p><div class="bb_h2"><b>Echo</b></div><p class="bb_paragraph"></p><p class="bb_paragraph">Forged in the earliest days of the universe, Echo once served as the resonant will of the Creators — a being of pure sound, harmonizing the forces of matter, life, and sky. But perfection has no place in a chaotic world. Cast down and bound to a physical form, Echo was sentenced to eternity as a Gatekeeper.</p><p class="bb_paragraph"></p><p class="bb_paragraph"><img src="https://clan.akamai.steamstatic.com/images/42755050/0de80e27e273b3c1b328bae38542558200e89194.png" /></p><p class="bb_paragraph">Now, he moves like a ripple through reality — throwing his disk across the battlefield, bending space to follow it, and calling forth tuning forks that pulse with crushing resonance. His power is rhythm, disruption, and control. Every note he strikes distorts the flow of combat.</p><p class="bb_paragraph">In the right hands, Echo doesn’t fight — he composes. And the battlefield dances to his song.</p><p class="bb_paragraph"></p><p class="bb_paragraph"><img src="https://clan.akamai.steamstatic.com/images/42755050/9bd4cc7f79e53b8d54afccff386b330746c2256a.jpg" /></p><div class="bb_h3">Gatekeeper drops tomorrow — August 1st!</div><p class="bb_paragraph"></p><p class="bb_paragraph"><i>Thank you,</i></p><p class="bb_paragraph"></p><p class="bb_paragraph"><b><i>Gravity Lagoon</i></b></p><p class="bb_paragraph"></p><div class="bb_h2">Socials</div><p class="bb_paragraph"><a class="bb_link" href="https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fdiscord.gg%2Fgravitylagoon" rel=" noopener" target="_blank">Join our Discord</a></p><p class="bb_paragraph"><a class="bb_link" href="https://www.reddit.com/r/Gatekeeper/" rel="" target="_blank">Join our Subreddit</a></p><p class="bb_paragraph"><a class="bb_link" href="https://steamcommunity.com/linkfilter/?u=https%3A%2F%2Fx.com%2Fgatekeeper_game" rel=" noopener" target="_blank">Follow on X</a></p>
+
+Published on: Thu, 31 Jul 2025 15:12:32 +0000
