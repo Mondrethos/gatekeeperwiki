@@ -1,7 +1,7 @@
 ---
 title: All Gatekeepers
 enableToc: false
---->
+---
 > [!Gatekeepers]+
 > # All Gatekeepers
 > | **[[Hybrid]]** | ![Hybrid Gatekeeper](Hybrid_Portrait.png) | *Unlock method here* |
