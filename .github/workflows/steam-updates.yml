@@ -23,6 +23,7 @@ permissions:
   contents: write
   pull-requests: write
   issues: write
+  actions: write
 
 env:
   PYTHON_VERSION: "3.11"
@@ -320,9 +321,10 @@ jobs:
                       print(f"  - {file}")
 
               # Set outputs for GitHub Actions
-              print(f"\n::set-output name=new_entries::{results['new_entries']}")
-              print(f"::set-output name=updated_entries::{results['updated_entries']}")
-              print(f"::set-output name=has_changes::{len(results['processed']) > 0}")
+              with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+                  f.write(f"new_entries={results['new_entries']}\n")
+                  f.write(f"updated_entries={results['updated_entries']}\n")
+                  f.write(f"has_changes={len(results['processed']) > 0}\n")
 
               # Exit with error if processing failed completely
               if results['errors'] and not results['processed']:
